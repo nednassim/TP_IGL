@@ -6,7 +6,11 @@ from rest_framework import status
 from rest_framework import viewsets
 from .serializers import annonceSerializer
 from .models import annonce
-# Create your views here.
+
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+from allauth.socialaccount.providers.oauth2.client import OAuth2Client
+from dj_rest_auth.registration.views import SocialLoginView
+
 
 def index(request):
     return HttpResponse('hello world')
@@ -44,3 +48,13 @@ def annonce_detail(request, pk):
     elif request.method == 'DELETE':
         ann.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+
+# class GoogleLogin(SocialLoginView): # if you want to use Authorization Code Grant, use this
+#     adapter_class = GoogleOAuth2Adapter
+#     callback_url = 'index'
+#     client_class = OAuth2Client
+
+class GoogleLogin(SocialLoginView): # if you want to use Implicit Grant, use this
+    adapter_class = GoogleOAuth2Adapter
