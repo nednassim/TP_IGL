@@ -1,24 +1,21 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractUser
+from django.conf import settings
 # Create your models here.
 
 from django.db import models
 
-class contact(models.Model):
+class ImmobilUser(AbstractUser):
 
-    phone = models.IntegerField()
+    nom = models.CharField(max_length=20, default="no name")
+    prenom = models.CharField(max_length=20, default="no name")
+    email = models.EmailField(max_length=254, null=True)
+    phone = models.IntegerField(null=True)
 
-class utitlisateur(models.Model):
+class Annonce(models.Model):
 
-    nom = models.CharField(max_length=20)
-    prenom = models.CharField(max_length=20)
-
-class locatlisation(models.Model):
-
-    city = models.CharField(max_length=20)
-
-class annonce(models.Model):
-
+    annonceur = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
+    
     annonce_categorie = (
         ('V', 'Vente'),
         ('E', 'Echange'),
@@ -40,9 +37,19 @@ class annonce(models.Model):
     description = models.CharField(max_length=500)
     suface = models.IntegerField()
     prix = models.IntegerField()
-    contact = models.ForeignKey(to=contact, on_delete=models.CASCADE, blank=True, null=True)
-    annonceur = models.ForeignKey(to=utitlisateur, on_delete=models.CASCADE, blank=True, null=True)
-    loc = models.ForeignKey(to=locatlisation, on_delete=models.CASCADE, blank=True, null=True)
-    photos = models.ImageField(upload_to='annonce/')
 
 
+class Location(models.Model):
+
+    city = models.CharField(max_length=20)
+    annonce = models.OneToOneField(Annonce, on_delete=models.CASCADE)
+
+class Message(models.Model):
+
+    texte = models.CharField(max_length=500)
+    annonce = models.ForeignKey(Annonce, on_delete=models.CASCADE)
+
+class Image(models.Model):
+
+    annonce = models.ForeignKey(Annonce, on_delete=models.CASCADE, null=True, blank=True)
+    path = models.ImageField(upload_to='annonce/')

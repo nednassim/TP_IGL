@@ -1,7 +1,16 @@
 from rest_framework import serializers
-from .models import annonce
+from django.contrib.auth.models import User
+from .models import Annonce
 
-class annonceSerializer(serializers.ModelSerializer):
+class AnnonceSerializer(serializers.ModelSerializer):
+
     class Meta:
-        model = annonce
+
+        model = Annonce
         fields = ('__all__')
+
+class userSerializer(serializers.ModelSerializer):
+    annonces = serializers.PrimaryKeyRelatedField(many=True, queryset=Annonce.objects.all())
+    class Meta:
+        model  = User
+        fields = ['id', 'username', 'annonces']

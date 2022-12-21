@@ -6,14 +6,16 @@ from django.conf.urls.static import static
 # from front import views
 from agence_api import views
 
+
+
 router = routers.DefaultRouter()
-router.register(r'annonce', views.annonceView)
+router.register(r'annonce', views.AnnonceView)
 
 urlpatterns = [
     # path('front/', include('front.urls')),
+    path('agence-api/', include('agence_api.urls')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('agence-api/', include('agence_api.urls')),
     path('accounts/', include('allauth.urls')),
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
     path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
