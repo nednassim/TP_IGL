@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     
     'corsheaders',
     
+    'django_filters',
     'rest_framework',
     'rest_framework.authtoken',
     
@@ -119,7 +120,7 @@ JWT_AUTH_COOKIE = 'agence-Immob-auth'
 JWT_AUTH_REFRESH_COOKIE = 'agence-refresh-token'
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=50),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=10),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
@@ -151,6 +152,7 @@ SIMPLE_JWT = {
 }
 
 LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
 
 AUTH_USER_MODEL = 'agence_api.ImmobilUser'
 

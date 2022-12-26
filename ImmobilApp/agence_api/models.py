@@ -7,14 +7,15 @@ from django.db import models
 
 class ImmobilUser(AbstractUser):
 
+    # user_permissions=[]
     nom = models.CharField(max_length=20, default="no name")
     prenom = models.CharField(max_length=20, default="no name")
     email = models.EmailField(max_length=254, null=True)
     phone = models.IntegerField(null=True)
 
-class Annonce(models.Model):
+class Annonce(models.Model): # required in insertion: [cat,type,desc,surf,prix] user will be the authenticated one
 
-    annonceur = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True)
+    annonceur = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True)
     
     annonce_categorie = (
         ('V', 'Vente'),
@@ -53,3 +54,8 @@ class Image(models.Model):
 
     annonce = models.ForeignKey(Annonce, on_delete=models.CASCADE, null=True, blank=True)
     path = models.ImageField(upload_to='annonce/')
+
+class Favoris(models.Model):
+
+    annonce = models.ForeignKey(Annonce, on_delete=models.CASCADE)
+    user = models.ForeignKey(ImmobilUser, on_delete=models.CASCADE, blank=True)

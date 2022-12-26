@@ -17,7 +17,7 @@ function App() {
   hello()
   const googleLogin = async (response) => {
     let res = await axios.post(
-      "http://127.0.0.1:8000/agence-api/rest-auth/google",
+      "http://127.0.0.1:8000/rest-auth/google",
       {
         access_token: response.accessToken,
       }
