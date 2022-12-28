@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import Annonce, Favoris
+from .models import Annonce, Favoris, Offre
 
 class AnnonceSerializer(serializers.ModelSerializer):
 
@@ -20,3 +20,9 @@ class FavoriSerializer(serializers.ModelSerializer):
     class Meta:
         model = Favoris
         fields = ('user','annonce')
+
+class OffreSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Offre
+        fields = ('annonceur', 'client', 'message', 'annonce', 'prix')

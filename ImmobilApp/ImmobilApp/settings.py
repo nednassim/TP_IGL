@@ -111,9 +111,13 @@ REST_FRAMEWORK = {
         
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    ),
+
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
     
 }
+
+
 
 REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'agence-Immob-auth'

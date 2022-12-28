@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings
+
 # Create your models here.
 
 from django.db import models
@@ -33,22 +34,20 @@ class Annonce(models.Model): # required in insertion: [cat,type,desc,surf,prix] 
 
     )
 
+    titre = models.CharField(max_length=100)
     categorie = models.CharField(max_length=12, choices=annonce_categorie)
     type = models.CharField(max_length=12, choices=type_bien)
     description = models.CharField(max_length=500)
-    suface = models.IntegerField()
+    surface = models.IntegerField()
     prix = models.IntegerField()
+    insertDate = models.DateTimeField(auto_now_add=True, blank=True)
+    
 
 
 class Location(models.Model):
 
-    city = models.CharField(max_length=20)
+    city = models.CharField(max_length=30)
     annonce = models.OneToOneField(Annonce, on_delete=models.CASCADE)
-
-class Message(models.Model):
-
-    texte = models.CharField(max_length=500)
-    annonce = models.ForeignKey(Annonce, on_delete=models.CASCADE)
 
 class Image(models.Model):
 
@@ -59,3 +58,14 @@ class Favoris(models.Model):
 
     annonce = models.ForeignKey(Annonce, on_delete=models.CASCADE)
     user = models.ForeignKey(ImmobilUser, on_delete=models.CASCADE, blank=True)
+
+    class Meta:
+        unique_together = ('annonce', 'user')
+
+class Offre(models.Model):
+
+    annonceur = models.ForeignKey(ImmobilUser, blank=True, on_delete=models.CASCADE, related_name='annonceurs')
+    client = models.ForeignKey(ImmobilUser, blank=True, on_delete=models.CASCADE, related_name='clients')
+    annonce = models.ForeignKey(Annonce, on_delete=models.CASCADE)
+    message = models.TextField(max_length=1000)
+    prix = models.IntegerField()

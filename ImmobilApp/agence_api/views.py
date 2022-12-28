@@ -5,18 +5,24 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
 from rest_framework import generics
-from .serializers import AnnonceSerializer, FavoriSerializer
-from .models import Annonce, Favoris
+from .serializers import AnnonceSerializer, FavoriSerializer, OffreSerializer
+from .models import Annonce, Favoris, Offre, ImmobilUser
+
 
 from django.shortcuts import get_object_or_404
 
 from rest_framework import permissions
+from rest_framework import filters
 
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
 from dj_rest_auth.registration.views import SocialLoginView
 
 from django.core.exceptions import ObjectDoesNotExist
+
+from django_filters import rest_framework as dj_filters
+
+from .filters import AnnonceFilter
 
 def index(request):
     return HttpResponse('hello world')
@@ -25,6 +31,10 @@ class AnnonceList(generics.ListAPIView):
     # permission_classes = [permissions.IsAuthenticated, ]
     serializer_class = AnnonceSerializer
     queryset = Annonce.objects.all()
+    ordering = ['insertDate']
+    ordering_fields = ['insertDate']
+    filter_backends=(dj_filters.DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter) # not needed when defined in settings
+    filterset_class = AnnonceFilter
 
 class OwnerAnnonceList(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated,]
@@ -95,7 +105,25 @@ class UnmarkAnnonce(generics.DestroyAPIView):
         self.perform_destroy(instance)
         return Response(status=status.HTTP_204_NO_CONTENT)
     
-  
+
+
+class ListOffers(generics.ListAPIView):
+    permission_classes=[permissions.IsAuthenticated]
+    serializer_class=OffreSerializer
+    queryset=Offre.objects
+
+class MakeOffer(generics.CreateAPIView):
+    serializer_class=OffreSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def perform_create(self, serializer):
+        serializer.save(client=self.request.user, annonceur = serializer.validated_data['annonce'].annonceur)
 
 class GoogleLogin(SocialLoginView): # if you want to use Authorization Code Grant, use this
     adapter_class = GoogleOAuth2Adapter
