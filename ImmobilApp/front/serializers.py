@@ -4,4 +4,4 @@ from .models import annonce
 class annonceSerializer(serializers.ModelSerializer):
     class Meta:
         model = annonce
-        fields = ('id', 'annonceur', 'price')
+        fields = ('__all__')
