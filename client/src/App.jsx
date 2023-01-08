@@ -1,11 +1,13 @@
+import { Route, Routes } from "react-router-dom"
+import Navbar from "./components/shared/Navbar"
+import Home from "./pages/Home"
+
 function App() {
 
   return (
-    <div className="mt-8">
-      <h1 className="text-3xl font-bold text-center">
-        Hello IGL
-      </h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
   )
 }
 
