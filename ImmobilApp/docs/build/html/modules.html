@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>agence_api &mdash; AgenceImmobil 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> AgenceImmobil
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="agence_api.html">agence_api package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AgenceImmobil</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">agence_api</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="agence-api">
+<h1>agence_api<a class="headerlink" href="#agence-api" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="agence_api.html">agence_api package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="agence_api.html#module-agence_api.admin">admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agence_api.html#module-agence_api.apps">apps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.apps.AgenceApiConfig"><code class="docutils literal notranslate"><span class="pre">AgenceApiConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.apps.AgenceApiConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">AgenceApiConfig.default_auto_field</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.apps.AgenceApiConfig.name"><code class="docutils literal notranslate"><span class="pre">AgenceApiConfig.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agence_api.html#module-agence_api.filters">filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.filters.AnnonceFilter"><code class="docutils literal notranslate"><span class="pre">AnnonceFilter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.filters.AnnonceFilter.base_filters"><code class="docutils literal notranslate"><span class="pre">AnnonceFilter.base_filters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.filters.AnnonceFilter.declared_filters"><code class="docutils literal notranslate"><span class="pre">AnnonceFilter.declared_filters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.filters.AnnonceFilter.filter_queryset"><code class="docutils literal notranslate"><span class="pre">AnnonceFilter.filter_queryset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agence_api.html#module-agence_api.models">models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce"><code class="docutils literal notranslate"><span class="pre">Annonce</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Annonce.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Annonce.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.annonce_categorie"><code class="docutils literal notranslate"><span class="pre">Annonce.annonce_categorie</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.annonceur"><code class="docutils literal notranslate"><span class="pre">Annonce.annonceur</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.annonceur_id"><code class="docutils literal notranslate"><span class="pre">Annonce.annonceur_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.categorie"><code class="docutils literal notranslate"><span class="pre">Annonce.categorie</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.description"><code class="docutils literal notranslate"><span class="pre">Annonce.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.favoris_set"><code class="docutils literal notranslate"><span class="pre">Annonce.favoris_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.get_categorie_display"><code class="docutils literal notranslate"><span class="pre">Annonce.get_categorie_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.get_next_by_insertDate"><code class="docutils literal notranslate"><span class="pre">Annonce.get_next_by_insertDate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.get_previous_by_insertDate"><code class="docutils literal notranslate"><span class="pre">Annonce.get_previous_by_insertDate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.get_type_display"><code class="docutils literal notranslate"><span class="pre">Annonce.get_type_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.id"><code class="docutils literal notranslate"><span class="pre">Annonce.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.image_set"><code class="docutils literal notranslate"><span class="pre">Annonce.image_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.insertDate"><code class="docutils literal notranslate"><span class="pre">Annonce.insertDate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.location"><code class="docutils literal notranslate"><span class="pre">Annonce.location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.objects"><code class="docutils literal notranslate"><span class="pre">Annonce.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.offre_set"><code class="docutils literal notranslate"><span class="pre">Annonce.offre_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.prix"><code class="docutils literal notranslate"><span class="pre">Annonce.prix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.surface"><code class="docutils literal notranslate"><span class="pre">Annonce.surface</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.titre"><code class="docutils literal notranslate"><span class="pre">Annonce.titre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.type"><code class="docutils literal notranslate"><span class="pre">Annonce.type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Annonce.type_bien"><code class="docutils literal notranslate"><span class="pre">Annonce.type_bien</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.models.Favoris"><code class="docutils literal notranslate"><span class="pre">Favoris</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Favoris.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Favoris.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Favoris.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Favoris.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Favoris.annonce"><code class="docutils literal notranslate"><span class="pre">Favoris.annonce</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Favoris.annonce_id"><code class="docutils literal notranslate"><span class="pre">Favoris.annonce_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Favoris.favDateTime"><code class="docutils literal notranslate"><span class="pre">Favoris.favDateTime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Favoris.get_next_by_favDateTime"><code class="docutils literal notranslate"><span class="pre">Favoris.get_next_by_favDateTime()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Favoris.get_previous_by_favDateTime"><code class="docutils literal notranslate"><span class="pre">Favoris.get_previous_by_favDateTime()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Favoris.id"><code class="docutils literal notranslate"><span class="pre">Favoris.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Favoris.objects"><code class="docutils literal notranslate"><span class="pre">Favoris.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Favoris.user"><code class="docutils literal notranslate"><span class="pre">Favoris.user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Favoris.user_id"><code class="docutils literal notranslate"><span class="pre">Favoris.user_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.models.Image"><code class="docutils literal notranslate"><span class="pre">Image</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Image.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Image.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Image.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Image.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Image.annonce"><code class="docutils literal notranslate"><span class="pre">Image.annonce</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Image.annonce_id"><code class="docutils literal notranslate"><span class="pre">Image.annonce_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Image.id"><code class="docutils literal notranslate"><span class="pre">Image.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Image.objects"><code class="docutils literal notranslate"><span class="pre">Image.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Image.path"><code class="docutils literal notranslate"><span class="pre">Image.path</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser"><code class="docutils literal notranslate"><span class="pre">ImmobilUser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.annonce_set"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.annonce_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.annonceurs"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.annonceurs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.auth_token"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.auth_token</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.clients"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.clients</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.date_joined"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.date_joined</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.email"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.emailaddress_set"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.emailaddress_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.favoris_set"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.favoris_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.first_name"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.get_next_by_date_joined"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.get_next_by_date_joined()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.get_previous_by_date_joined"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.get_previous_by_date_joined()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.groups"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.groups</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.id"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.is_active"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.is_active</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.is_staff"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.is_staff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.is_superuser"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.is_superuser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.last_login"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.last_login</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.last_name"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.last_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.logentry_set"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.logentry_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.nom"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.nom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.outstandingtoken_set"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.outstandingtoken_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.password"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.password</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.phone"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.phone</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.prenom"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.prenom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.socialaccount_set"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.socialaccount_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.user_permissions"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.user_permissions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.ImmobilUser.username"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.username</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.models.Location"><code class="docutils literal notranslate"><span class="pre">Location</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Location.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Location.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Location.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Location.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Location.annonce"><code class="docutils literal notranslate"><span class="pre">Location.annonce</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Location.annonce_id"><code class="docutils literal notranslate"><span class="pre">Location.annonce_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Location.city"><code class="docutils literal notranslate"><span class="pre">Location.city</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Location.id"><code class="docutils literal notranslate"><span class="pre">Location.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Location.objects"><code class="docutils literal notranslate"><span class="pre">Location.objects</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.models.Offre"><code class="docutils literal notranslate"><span class="pre">Offre</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Offre.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Offre.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.annonce"><code class="docutils literal notranslate"><span class="pre">Offre.annonce</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.annonce_id"><code class="docutils literal notranslate"><span class="pre">Offre.annonce_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.annonceur"><code class="docutils literal notranslate"><span class="pre">Offre.annonceur</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.annonceur_id"><code class="docutils literal notranslate"><span class="pre">Offre.annonceur_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.client"><code class="docutils literal notranslate"><span class="pre">Offre.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.client_id"><code class="docutils literal notranslate"><span class="pre">Offre.client_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.dateOffre"><code class="docutils literal notranslate"><span class="pre">Offre.dateOffre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.get_next_by_dateOffre"><code class="docutils literal notranslate"><span class="pre">Offre.get_next_by_dateOffre()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.get_previous_by_dateOffre"><code class="docutils literal notranslate"><span class="pre">Offre.get_previous_by_dateOffre()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.id"><code class="docutils literal notranslate"><span class="pre">Offre.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.message"><code class="docutils literal notranslate"><span class="pre">Offre.message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.objects"><code class="docutils literal notranslate"><span class="pre">Offre.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.models.Offre.prix"><code class="docutils literal notranslate"><span class="pre">Offre.prix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agence_api.html#module-agence_api.serializers">serializers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.serializers.AnnonceSerializer"><code class="docutils literal notranslate"><span class="pre">AnnonceSerializer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.serializers.FavoriSerializer"><code class="docutils literal notranslate"><span class="pre">FavoriSerializer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.serializers.OffreSerializer"><code class="docutils literal notranslate"><span class="pre">OffreSerializer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.serializers.userSerializer"><code class="docutils literal notranslate"><span class="pre">userSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agence_api.html#module-agence_api.tests">tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agence_api.html#module-agence_api.urls">urls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agence_api.html#module-agence_api.views">views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceDetails"><code class="docutils literal notranslate"><span class="pre">AnnonceDetails</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceDetails.queryset"><code class="docutils literal notranslate"><span class="pre">AnnonceDetails.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceDetails.serializer_class"><code class="docutils literal notranslate"><span class="pre">AnnonceDetails.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceList"><code class="docutils literal notranslate"><span class="pre">AnnonceList</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceList.filter_backends"><code class="docutils literal notranslate"><span class="pre">AnnonceList.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceList.filterset_class"><code class="docutils literal notranslate"><span class="pre">AnnonceList.filterset_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceList.ordering"><code class="docutils literal notranslate"><span class="pre">AnnonceList.ordering</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceList.ordering_fields"><code class="docutils literal notranslate"><span class="pre">AnnonceList.ordering_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceList.queryset"><code class="docutils literal notranslate"><span class="pre">AnnonceList.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceList.serializer_class"><code class="docutils literal notranslate"><span class="pre">AnnonceList.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceRemove"><code class="docutils literal notranslate"><span class="pre">AnnonceRemove</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceRemove.queryset"><code class="docutils literal notranslate"><span class="pre">AnnonceRemove.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.AnnonceRemove.serializer_class"><code class="docutils literal notranslate"><span class="pre">AnnonceRemove.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.views.DeposerAnnonce"><code class="docutils literal notranslate"><span class="pre">DeposerAnnonce</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.DeposerAnnonce.create"><code class="docutils literal notranslate"><span class="pre">DeposerAnnonce.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.DeposerAnnonce.perform_create"><code class="docutils literal notranslate"><span class="pre">DeposerAnnonce.perform_create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.DeposerAnnonce.serializer_class"><code class="docutils literal notranslate"><span class="pre">DeposerAnnonce.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.views.GoogleLogin"><code class="docutils literal notranslate"><span class="pre">GoogleLogin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.GoogleLogin.adapter_class"><code class="docutils literal notranslate"><span class="pre">GoogleLogin.adapter_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.GoogleLogin.callback_url"><code class="docutils literal notranslate"><span class="pre">GoogleLogin.callback_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.GoogleLogin.client_class"><code class="docutils literal notranslate"><span class="pre">GoogleLogin.client_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.views.ListMarkedAnnonce"><code class="docutils literal notranslate"><span class="pre">ListMarkedAnnonce</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.ListMarkedAnnonce.get_queryset"><code class="docutils literal notranslate"><span class="pre">ListMarkedAnnonce.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.ListMarkedAnnonce.permission_classes"><code class="docutils literal notranslate"><span class="pre">ListMarkedAnnonce.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.ListMarkedAnnonce.serializer_class"><code class="docutils literal notranslate"><span class="pre">ListMarkedAnnonce.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.views.ListOffers"><code class="docutils literal notranslate"><span class="pre">ListOffers</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.ListOffers.permission_classes"><code class="docutils literal notranslate"><span class="pre">ListOffers.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.ListOffers.queryset"><code class="docutils literal notranslate"><span class="pre">ListOffers.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.ListOffers.serializer_class"><code class="docutils literal notranslate"><span class="pre">ListOffers.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.views.MakeOffer"><code class="docutils literal notranslate"><span class="pre">MakeOffer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.MakeOffer.create"><code class="docutils literal notranslate"><span class="pre">MakeOffer.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.MakeOffer.perform_create"><code class="docutils literal notranslate"><span class="pre">MakeOffer.perform_create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.MakeOffer.serializer_class"><code class="docutils literal notranslate"><span class="pre">MakeOffer.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.views.MarkAnnonce"><code class="docutils literal notranslate"><span class="pre">MarkAnnonce</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.MarkAnnonce.create"><code class="docutils literal notranslate"><span class="pre">MarkAnnonce.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.MarkAnnonce.perform_create"><code class="docutils literal notranslate"><span class="pre">MarkAnnonce.perform_create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.MarkAnnonce.serializer_class"><code class="docutils literal notranslate"><span class="pre">MarkAnnonce.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.views.OwnerAnnonceList"><code class="docutils literal notranslate"><span class="pre">OwnerAnnonceList</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.OwnerAnnonceList.get_queryset"><code class="docutils literal notranslate"><span class="pre">OwnerAnnonceList.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.OwnerAnnonceList.permission_classes"><code class="docutils literal notranslate"><span class="pre">OwnerAnnonceList.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.OwnerAnnonceList.serializer_class"><code class="docutils literal notranslate"><span class="pre">OwnerAnnonceList.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.views.UnmarkAnnonce"><code class="docutils literal notranslate"><span class="pre">UnmarkAnnonce</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.UnmarkAnnonce.destroy"><code class="docutils literal notranslate"><span class="pre">UnmarkAnnonce.destroy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.UnmarkAnnonce.get_queryset"><code class="docutils literal notranslate"><span class="pre">UnmarkAnnonce.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.UnmarkAnnonce.permission_classes"><code class="docutils literal notranslate"><span class="pre">UnmarkAnnonce.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agence_api.html#agence_api.views.UnmarkAnnonce.serializer_class"><code class="docutils literal notranslate"><span class="pre">UnmarkAnnonce.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agence_api.html#agence_api.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Equipe-IGL.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

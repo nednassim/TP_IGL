@@ -1,6 +1,6 @@
 from django.urls import path, re_path
 from . import views
-
+from django.views.generic import TemplateView
 
 
 
@@ -15,7 +15,11 @@ urlpatterns = [
     path('favoris/<int:annonce_pk>/delete/', views.UnmarkAnnonce.as_view(), name='delete from favoris'), # provide annonce_id
     path('favoris/list', views.ListMarkedAnnonce.as_view(), name='afficher liste favoris'),
     path('offres/', views.ListOffers.as_view(), name='Liste des messages offres'),
-    path('proposer-offre/', views.MakeOffer.as_view(), name='proposer un offre')
+    path('proposer-offre/', views.MakeOffer.as_view(), name='proposer un offre'),
+    path('swagger-ui/', TemplateView.as_view(
+        template_name='swagger-ui.html',
+        extra_context={'schema_url':'openapi-schema'}
+    ), name='swagger-ui'),
     # path('send-message', views.as_view(), name='envoyer message a annonceur'),
 
     # path('rest-auth/registration/', ),

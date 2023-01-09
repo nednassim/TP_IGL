@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>agence_api package &mdash; AgenceImmobil 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Indices and tables" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> AgenceImmobil
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">agence_api package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-agence_api.admin">admin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-agence_api.apps">apps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.apps.AgenceApiConfig"><code class="docutils literal notranslate"><span class="pre">AgenceApiConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.apps.AgenceApiConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">AgenceApiConfig.default_auto_field</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.apps.AgenceApiConfig.name"><code class="docutils literal notranslate"><span class="pre">AgenceApiConfig.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-agence_api.filters">filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.filters.AnnonceFilter"><code class="docutils literal notranslate"><span class="pre">AnnonceFilter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.filters.AnnonceFilter.base_filters"><code class="docutils literal notranslate"><span class="pre">AnnonceFilter.base_filters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.filters.AnnonceFilter.declared_filters"><code class="docutils literal notranslate"><span class="pre">AnnonceFilter.declared_filters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.filters.AnnonceFilter.filter_queryset"><code class="docutils literal notranslate"><span class="pre">AnnonceFilter.filter_queryset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-agence_api.models">models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.models.Annonce"><code class="docutils literal notranslate"><span class="pre">Annonce</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Annonce.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Annonce.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.annonce_categorie"><code class="docutils literal notranslate"><span class="pre">Annonce.annonce_categorie</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.annonceur"><code class="docutils literal notranslate"><span class="pre">Annonce.annonceur</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.annonceur_id"><code class="docutils literal notranslate"><span class="pre">Annonce.annonceur_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.categorie"><code class="docutils literal notranslate"><span class="pre">Annonce.categorie</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.description"><code class="docutils literal notranslate"><span class="pre">Annonce.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.favoris_set"><code class="docutils literal notranslate"><span class="pre">Annonce.favoris_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.get_categorie_display"><code class="docutils literal notranslate"><span class="pre">Annonce.get_categorie_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.get_next_by_insertDate"><code class="docutils literal notranslate"><span class="pre">Annonce.get_next_by_insertDate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.get_previous_by_insertDate"><code class="docutils literal notranslate"><span class="pre">Annonce.get_previous_by_insertDate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.get_type_display"><code class="docutils literal notranslate"><span class="pre">Annonce.get_type_display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.id"><code class="docutils literal notranslate"><span class="pre">Annonce.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.image_set"><code class="docutils literal notranslate"><span class="pre">Annonce.image_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.insertDate"><code class="docutils literal notranslate"><span class="pre">Annonce.insertDate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.location"><code class="docutils literal notranslate"><span class="pre">Annonce.location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.objects"><code class="docutils literal notranslate"><span class="pre">Annonce.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.offre_set"><code class="docutils literal notranslate"><span class="pre">Annonce.offre_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.prix"><code class="docutils literal notranslate"><span class="pre">Annonce.prix</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.surface"><code class="docutils literal notranslate"><span class="pre">Annonce.surface</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.titre"><code class="docutils literal notranslate"><span class="pre">Annonce.titre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.type"><code class="docutils literal notranslate"><span class="pre">Annonce.type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Annonce.type_bien"><code class="docutils literal notranslate"><span class="pre">Annonce.type_bien</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.models.Favoris"><code class="docutils literal notranslate"><span class="pre">Favoris</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Favoris.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Favoris.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Favoris.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Favoris.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Favoris.annonce"><code class="docutils literal notranslate"><span class="pre">Favoris.annonce</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Favoris.annonce_id"><code class="docutils literal notranslate"><span class="pre">Favoris.annonce_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Favoris.favDateTime"><code class="docutils literal notranslate"><span class="pre">Favoris.favDateTime</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Favoris.get_next_by_favDateTime"><code class="docutils literal notranslate"><span class="pre">Favoris.get_next_by_favDateTime()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Favoris.get_previous_by_favDateTime"><code class="docutils literal notranslate"><span class="pre">Favoris.get_previous_by_favDateTime()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Favoris.id"><code class="docutils literal notranslate"><span class="pre">Favoris.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Favoris.objects"><code class="docutils literal notranslate"><span class="pre">Favoris.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Favoris.user"><code class="docutils literal notranslate"><span class="pre">Favoris.user</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Favoris.user_id"><code class="docutils literal notranslate"><span class="pre">Favoris.user_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.models.Image"><code class="docutils literal notranslate"><span class="pre">Image</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Image.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Image.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Image.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Image.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Image.annonce"><code class="docutils literal notranslate"><span class="pre">Image.annonce</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Image.annonce_id"><code class="docutils literal notranslate"><span class="pre">Image.annonce_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Image.id"><code class="docutils literal notranslate"><span class="pre">Image.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Image.objects"><code class="docutils literal notranslate"><span class="pre">Image.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Image.path"><code class="docutils literal notranslate"><span class="pre">Image.path</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.models.ImmobilUser"><code class="docutils literal notranslate"><span class="pre">ImmobilUser</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.annonce_set"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.annonce_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.annonceurs"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.annonceurs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.auth_token"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.auth_token</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.clients"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.clients</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.date_joined"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.date_joined</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.email"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.emailaddress_set"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.emailaddress_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.favoris_set"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.favoris_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.first_name"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.get_next_by_date_joined"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.get_next_by_date_joined()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.get_previous_by_date_joined"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.get_previous_by_date_joined()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.groups"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.groups</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.id"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.is_active"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.is_active</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.is_staff"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.is_staff</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.is_superuser"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.is_superuser</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.last_login"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.last_login</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.last_name"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.last_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.logentry_set"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.logentry_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.nom"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.nom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.outstandingtoken_set"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.outstandingtoken_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.password"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.password</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.phone"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.phone</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.prenom"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.prenom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.socialaccount_set"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.socialaccount_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.user_permissions"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.user_permissions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.ImmobilUser.username"><code class="docutils literal notranslate"><span class="pre">ImmobilUser.username</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.models.Location"><code class="docutils literal notranslate"><span class="pre">Location</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Location.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Location.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Location.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Location.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Location.annonce"><code class="docutils literal notranslate"><span class="pre">Location.annonce</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Location.annonce_id"><code class="docutils literal notranslate"><span class="pre">Location.annonce_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Location.city"><code class="docutils literal notranslate"><span class="pre">Location.city</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Location.id"><code class="docutils literal notranslate"><span class="pre">Location.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Location.objects"><code class="docutils literal notranslate"><span class="pre">Location.objects</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.models.Offre"><code class="docutils literal notranslate"><span class="pre">Offre</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Offre.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Offre.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.annonce"><code class="docutils literal notranslate"><span class="pre">Offre.annonce</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.annonce_id"><code class="docutils literal notranslate"><span class="pre">Offre.annonce_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.annonceur"><code class="docutils literal notranslate"><span class="pre">Offre.annonceur</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.annonceur_id"><code class="docutils literal notranslate"><span class="pre">Offre.annonceur_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.client"><code class="docutils literal notranslate"><span class="pre">Offre.client</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.client_id"><code class="docutils literal notranslate"><span class="pre">Offre.client_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.dateOffre"><code class="docutils literal notranslate"><span class="pre">Offre.dateOffre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.get_next_by_dateOffre"><code class="docutils literal notranslate"><span class="pre">Offre.get_next_by_dateOffre()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.get_previous_by_dateOffre"><code class="docutils literal notranslate"><span class="pre">Offre.get_previous_by_dateOffre()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.id"><code class="docutils literal notranslate"><span class="pre">Offre.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.message"><code class="docutils literal notranslate"><span class="pre">Offre.message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.objects"><code class="docutils literal notranslate"><span class="pre">Offre.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.models.Offre.prix"><code class="docutils literal notranslate"><span class="pre">Offre.prix</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-agence_api.serializers">serializers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.serializers.AnnonceSerializer"><code class="docutils literal notranslate"><span class="pre">AnnonceSerializer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.serializers.FavoriSerializer"><code class="docutils literal notranslate"><span class="pre">FavoriSerializer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.serializers.OffreSerializer"><code class="docutils literal notranslate"><span class="pre">OffreSerializer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.serializers.userSerializer"><code class="docutils literal notranslate"><span class="pre">userSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-agence_api.tests">tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-agence_api.urls">urls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-agence_api.views">views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.views.AnnonceDetails"><code class="docutils literal notranslate"><span class="pre">AnnonceDetails</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.AnnonceDetails.queryset"><code class="docutils literal notranslate"><span class="pre">AnnonceDetails.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.AnnonceDetails.serializer_class"><code class="docutils literal notranslate"><span class="pre">AnnonceDetails.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.views.AnnonceList"><code class="docutils literal notranslate"><span class="pre">AnnonceList</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.AnnonceList.filter_backends"><code class="docutils literal notranslate"><span class="pre">AnnonceList.filter_backends</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.AnnonceList.filterset_class"><code class="docutils literal notranslate"><span class="pre">AnnonceList.filterset_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.AnnonceList.ordering"><code class="docutils literal notranslate"><span class="pre">AnnonceList.ordering</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.AnnonceList.ordering_fields"><code class="docutils literal notranslate"><span class="pre">AnnonceList.ordering_fields</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.AnnonceList.queryset"><code class="docutils literal notranslate"><span class="pre">AnnonceList.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.AnnonceList.serializer_class"><code class="docutils literal notranslate"><span class="pre">AnnonceList.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.views.AnnonceRemove"><code class="docutils literal notranslate"><span class="pre">AnnonceRemove</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.AnnonceRemove.queryset"><code class="docutils literal notranslate"><span class="pre">AnnonceRemove.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.AnnonceRemove.serializer_class"><code class="docutils literal notranslate"><span class="pre">AnnonceRemove.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.views.DeposerAnnonce"><code class="docutils literal notranslate"><span class="pre">DeposerAnnonce</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.DeposerAnnonce.create"><code class="docutils literal notranslate"><span class="pre">DeposerAnnonce.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.DeposerAnnonce.perform_create"><code class="docutils literal notranslate"><span class="pre">DeposerAnnonce.perform_create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.DeposerAnnonce.serializer_class"><code class="docutils literal notranslate"><span class="pre">DeposerAnnonce.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.views.GoogleLogin"><code class="docutils literal notranslate"><span class="pre">GoogleLogin</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.GoogleLogin.adapter_class"><code class="docutils literal notranslate"><span class="pre">GoogleLogin.adapter_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.GoogleLogin.callback_url"><code class="docutils literal notranslate"><span class="pre">GoogleLogin.callback_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.GoogleLogin.client_class"><code class="docutils literal notranslate"><span class="pre">GoogleLogin.client_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.views.ListMarkedAnnonce"><code class="docutils literal notranslate"><span class="pre">ListMarkedAnnonce</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.ListMarkedAnnonce.get_queryset"><code class="docutils literal notranslate"><span class="pre">ListMarkedAnnonce.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.ListMarkedAnnonce.permission_classes"><code class="docutils literal notranslate"><span class="pre">ListMarkedAnnonce.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.ListMarkedAnnonce.serializer_class"><code class="docutils literal notranslate"><span class="pre">ListMarkedAnnonce.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.views.ListOffers"><code class="docutils literal notranslate"><span class="pre">ListOffers</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.ListOffers.permission_classes"><code class="docutils literal notranslate"><span class="pre">ListOffers.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.ListOffers.queryset"><code class="docutils literal notranslate"><span class="pre">ListOffers.queryset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.ListOffers.serializer_class"><code class="docutils literal notranslate"><span class="pre">ListOffers.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.views.MakeOffer"><code class="docutils literal notranslate"><span class="pre">MakeOffer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.MakeOffer.create"><code class="docutils literal notranslate"><span class="pre">MakeOffer.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.MakeOffer.perform_create"><code class="docutils literal notranslate"><span class="pre">MakeOffer.perform_create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.MakeOffer.serializer_class"><code class="docutils literal notranslate"><span class="pre">MakeOffer.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.views.MarkAnnonce"><code class="docutils literal notranslate"><span class="pre">MarkAnnonce</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.MarkAnnonce.create"><code class="docutils literal notranslate"><span class="pre">MarkAnnonce.create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.MarkAnnonce.perform_create"><code class="docutils literal notranslate"><span class="pre">MarkAnnonce.perform_create()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.MarkAnnonce.serializer_class"><code class="docutils literal notranslate"><span class="pre">MarkAnnonce.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.views.OwnerAnnonceList"><code class="docutils literal notranslate"><span class="pre">OwnerAnnonceList</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.OwnerAnnonceList.get_queryset"><code class="docutils literal notranslate"><span class="pre">OwnerAnnonceList.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.OwnerAnnonceList.permission_classes"><code class="docutils literal notranslate"><span class="pre">OwnerAnnonceList.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.OwnerAnnonceList.serializer_class"><code class="docutils literal notranslate"><span class="pre">OwnerAnnonceList.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.views.UnmarkAnnonce"><code class="docutils literal notranslate"><span class="pre">UnmarkAnnonce</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.UnmarkAnnonce.destroy"><code class="docutils literal notranslate"><span class="pre">UnmarkAnnonce.destroy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.UnmarkAnnonce.get_queryset"><code class="docutils literal notranslate"><span class="pre">UnmarkAnnonce.get_queryset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.UnmarkAnnonce.permission_classes"><code class="docutils literal notranslate"><span class="pre">UnmarkAnnonce.permission_classes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agence_api.views.UnmarkAnnonce.serializer_class"><code class="docutils literal notranslate"><span class="pre">UnmarkAnnonce.serializer_class</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#agence_api.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AgenceImmobil</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">agence_api package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/agence_api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="agence-api-package">
+<h1>agence_api package<a class="headerlink" href="#agence-api-package" title="Permalink to this heading"></a></h1>
+<section id="module-agence_api.admin">
+<span id="admin"></span><h2>admin<a class="headerlink" href="#module-agence_api.admin" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-agence_api.apps">
+<span id="apps"></span><h2>apps<a class="headerlink" href="#module-agence_api.apps" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.apps.AgenceApiConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.apps.</span></span><span class="sig-name descname"><span class="pre">AgenceApiConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.apps.AgenceApiConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/applications/#django.apps.AppConfig" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.apps.AgenceApiConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#agence_api.apps.AgenceApiConfig.default_auto_field" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.apps.AgenceApiConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'agence_api'</span></em><a class="headerlink" href="#agence_api.apps.AgenceApiConfig.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agence_api.filters">
+<span id="filters"></span><h2>filters<a class="headerlink" href="#module-agence_api.filters" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.filters.AnnonceFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.filters.</span></span><span class="sig-name descname"><span class="pre">AnnonceFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.filters.AnnonceFilter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FilterSet</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.filters.AnnonceFilter.base_filters">
+<span class="sig-name descname"><span class="pre">base_filters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'end_date':</span> <span class="pre">&lt;django_filters.filters.DateFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'location__city':</span> <span class="pre">&lt;django_filters.filters.CharFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'start_date':</span> <span class="pre">&lt;django_filters.filters.DateFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'type':</span> <span class="pre">&lt;django_filters.filters.ChoiceFilter</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#agence_api.filters.AnnonceFilter.base_filters" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.filters.AnnonceFilter.declared_filters">
+<span class="sig-name descname"><span class="pre">declared_filters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'end_date':</span> <span class="pre">&lt;django_filters.filters.DateFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'start_date':</span> <span class="pre">&lt;django_filters.filters.DateFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'type':</span> <span class="pre">&lt;django_filters.filters.ChoiceFilter</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#agence_api.filters.AnnonceFilter.declared_filters" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.filters.AnnonceFilter.filter_queryset">
+<span class="sig-name descname"><span class="pre">filter_queryset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">passedqueryset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.filters.AnnonceFilter.filter_queryset" title="Permalink to this definition"></a></dt>
+<dd><p>Filter the queryset with the underlying form’s <cite>cleaned_data</cite>. You must
+call <cite>is_valid()</cite> or <cite>errors</cite> before calling this method.</p>
+<p>This method should be overridden if additional filtering needs to be
+applied to the queryset before it is cached.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agence_api.models">
+<span id="models"></span><h2>models<a class="headerlink" href="#module-agence_api.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.models.Annonce">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.models.</span></span><span class="sig-name descname"><span class="pre">Annonce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annonceur</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">titre</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">categorie</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">insertDate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Annonce" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.1)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>titre</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><em>CharField</em></a>) – Titre</p></li>
+<li><p><strong>categorie</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><em>CharField</em></a>) – Categorie</p></li>
+<li><p><strong>type</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><em>CharField</em></a>) – Type</p></li>
+<li><p><strong>description</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><em>CharField</em></a>) – Description</p></li>
+<li><p><strong>surface</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.IntegerField" title="(in Django v4.1)"><em>IntegerField</em></a>) – Surface</p></li>
+<li><p><strong>prix</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.IntegerField" title="(in Django v4.1)"><em>IntegerField</em></a>) – Prix</p></li>
+<li><p><strong>insertDate</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.1)"><em>DateTimeField</em></a>) – InsertDate</p></li>
+</ul>
+</dd>
+</dl>
+<p>Relationship fields:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>annonceur</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.ImmobilUser" title="agence_api.models.ImmobilUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImmobilUser</span></code></a>) – Annonceur (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">annonce</span></code>)</p>
+</dd>
+</dl>
+<p>Reverse relationships:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>location</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> from <a class="reference internal" href="#agence_api.models.Location" title="agence_api.models.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a>) – The location of this annonce (related name of <a class="reference internal" href="#agence_api.models.Location.annonce" title="agence_api.models.Location.annonce"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonce</span></code></a>)</p></li>
+<li><p><strong>image</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Image" title="agence_api.models.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a>) – All images of this annonce (related name of <a class="reference internal" href="#agence_api.models.Image.annonce" title="agence_api.models.Image.annonce"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonce</span></code></a>)</p></li>
+<li><p><strong>favoris</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Favoris" title="agence_api.models.Favoris"><code class="xref py py-class docutils literal notranslate"><span class="pre">Favoris</span></code></a>) – All favoriss of this annonce (related name of <a class="reference internal" href="#agence_api.models.Favoris.annonce" title="agence_api.models.Favoris.annonce"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonce</span></code></a>)</p></li>
+<li><p><strong>offre</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Offre" title="agence_api.models.Offre"><code class="xref py py-class docutils literal notranslate"><span class="pre">Offre</span></code></a>) – All offres of this annonce (related name of <a class="reference internal" href="#agence_api.models.Offre.annonce" title="agence_api.models.Offre.annonce"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonce</span></code></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#agence_api.models.Annonce.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#agence_api.models.Annonce.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.annonce_categorie">
+<span class="sig-name descname"><span class="pre">annonce_categorie</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(('V',</span> <span class="pre">'Vente'),</span> <span class="pre">('E',</span> <span class="pre">'Echange'),</span> <span class="pre">('L',</span> <span class="pre">'Location'),</span> <span class="pre">('LV',</span> <span class="pre">'Location</span> <span class="pre">pour</span> <span class="pre">Vacances'))</span></em><a class="headerlink" href="#agence_api.models.Annonce.annonce_categorie" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.annonceur">
+<span class="sig-name descname"><span class="pre">annonceur</span></span><a class="headerlink" href="#agence_api.models.Annonce.annonceur" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.ImmobilUser" title="agence_api.models.ImmobilUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImmobilUser</span></code></a></p>
+<p>Annonceur (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">annonce</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.annonceur_id">
+<span class="sig-name descname"><span class="pre">annonceur_id</span></span><a class="headerlink" href="#agence_api.models.Annonce.annonceur_id" title="Permalink to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#agence_api.models.Annonce.annonceur" title="agence_api.models.Annonce.annonceur"><code class="xref py py-class docutils literal notranslate"><span class="pre">annonceur</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.categorie">
+<span class="sig-name descname"><span class="pre">categorie</span></span><a class="headerlink" href="#agence_api.models.Annonce.categorie" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Categorie</p>
+<p>Choices:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">V</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">L</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#agence_api.models.Annonce.description" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Description</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.favoris_set">
+<span class="sig-name descname"><span class="pre">favoris_set</span></span><a class="headerlink" href="#agence_api.models.Annonce.favoris_set" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Favoris" title="agence_api.models.Favoris"><code class="xref py py-class docutils literal notranslate"><span class="pre">Favoris</span></code></a></p>
+<p>All favoriss of this annonce (related name of <a class="reference internal" href="#agence_api.models.Favoris.annonce" title="agence_api.models.Favoris.annonce"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonce</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.get_categorie_display">
+<span class="sig-name descname"><span class="pre">get_categorie_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.CharField:</span> <span class="pre">categorie&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Annonce.get_categorie_display" title="Permalink to this definition"></a></dt>
+<dd><p>Shows the label of the <a class="reference internal" href="#agence_api.models.Annonce.categorie" title="agence_api.models.Annonce.categorie"><code class="xref py py-attr docutils literal notranslate"><span class="pre">categorie</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_FOO_display" title="(in Django v4.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_FOO_display()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.get_next_by_insertDate">
+<span class="sig-name descname"><span class="pre">get_next_by_insertDate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">insertDate&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Annonce.get_next_by_insertDate" title="Permalink to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#agence_api.models.Annonce.insertDate" title="agence_api.models.Annonce.insertDate"><code class="xref py py-attr docutils literal notranslate"><span class="pre">insertDate</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.get_previous_by_insertDate">
+<span class="sig-name descname"><span class="pre">get_previous_by_insertDate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">insertDate&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Annonce.get_previous_by_insertDate" title="Permalink to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#agence_api.models.Annonce.insertDate" title="agence_api.models.Annonce.insertDate"><code class="xref py py-attr docutils literal notranslate"><span class="pre">insertDate</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.get_type_display">
+<span class="sig-name descname"><span class="pre">get_type_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.CharField:</span> <span class="pre">type&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Annonce.get_type_display" title="Permalink to this definition"></a></dt>
+<dd><p>Shows the label of the <a class="reference internal" href="#agence_api.models.Annonce.type" title="agence_api.models.Annonce.type"><code class="xref py py-attr docutils literal notranslate"><span class="pre">type</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_FOO_display" title="(in Django v4.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_FOO_display()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#agence_api.models.Annonce.id" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.image_set">
+<span class="sig-name descname"><span class="pre">image_set</span></span><a class="headerlink" href="#agence_api.models.Annonce.image_set" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Image" title="agence_api.models.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a></p>
+<p>All images of this annonce (related name of <a class="reference internal" href="#agence_api.models.Image.annonce" title="agence_api.models.Image.annonce"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonce</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.insertDate">
+<span class="sig-name descname"><span class="pre">insertDate</span></span><a class="headerlink" href="#agence_api.models.Annonce.insertDate" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>InsertDate</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.location">
+<span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#agence_api.models.Annonce.location" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> from <a class="reference internal" href="#agence_api.models.Location" title="agence_api.models.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a></p>
+<p>The location of this annonce (related name of <a class="reference internal" href="#agence_api.models.Location.annonce" title="agence_api.models.Location.annonce"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonce</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#agence_api.models.Annonce.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.offre_set">
+<span class="sig-name descname"><span class="pre">offre_set</span></span><a class="headerlink" href="#agence_api.models.Annonce.offre_set" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Offre" title="agence_api.models.Offre"><code class="xref py py-class docutils literal notranslate"><span class="pre">Offre</span></code></a></p>
+<p>All offres of this annonce (related name of <a class="reference internal" href="#agence_api.models.Offre.annonce" title="agence_api.models.Offre.annonce"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonce</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.prix">
+<span class="sig-name descname"><span class="pre">prix</span></span><a class="headerlink" href="#agence_api.models.Annonce.prix" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.IntegerField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerField</span></code></a></p>
+<p>Prix</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.surface">
+<span class="sig-name descname"><span class="pre">surface</span></span><a class="headerlink" href="#agence_api.models.Annonce.surface" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.IntegerField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerField</span></code></a></p>
+<p>Surface</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.titre">
+<span class="sig-name descname"><span class="pre">titre</span></span><a class="headerlink" href="#agence_api.models.Annonce.titre" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Titre</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.type">
+<span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#agence_api.models.Annonce.type" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Type</p>
+<p>Choices:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TA</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Annonce.type_bien">
+<span class="sig-name descname"><span class="pre">type_bien</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(('T',</span> <span class="pre">'Terrain'),</span> <span class="pre">('TA',</span> <span class="pre">'Terrain</span> <span class="pre">Agricole'),</span> <span class="pre">('A',</span> <span class="pre">'Appartement'),</span> <span class="pre">('M',</span> <span class="pre">'Maison'),</span> <span class="pre">('B',</span> <span class="pre">'Bungalow'))</span></em><a class="headerlink" href="#agence_api.models.Annonce.type_bien" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.models.Favoris">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.models.</span></span><span class="sig-name descname"><span class="pre">Favoris</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annonce</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">favDateTime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Favoris" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.1)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>favDateTime</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.1)"><em>DateTimeField</em></a>) – FavDateTime</p></li>
+</ul>
+</dd>
+</dl>
+<p>Relationship fields:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>annonce</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.Annonce" title="agence_api.models.Annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">Annonce</span></code></a>) – Annonce (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">favoris</span></code>)</p></li>
+<li><p><strong>user</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.ImmobilUser" title="agence_api.models.ImmobilUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImmobilUser</span></code></a>) – User (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">favoris</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="agence_api.models.Favoris.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#agence_api.models.Favoris.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="agence_api.models.Favoris.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#agence_api.models.Favoris.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Favoris.annonce">
+<span class="sig-name descname"><span class="pre">annonce</span></span><a class="headerlink" href="#agence_api.models.Favoris.annonce" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.Annonce" title="agence_api.models.Annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">Annonce</span></code></a></p>
+<p>Annonce (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">favoris</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Favoris.annonce_id">
+<span class="sig-name descname"><span class="pre">annonce_id</span></span><a class="headerlink" href="#agence_api.models.Favoris.annonce_id" title="Permalink to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#agence_api.models.Favoris.annonce" title="agence_api.models.Favoris.annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">annonce</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Favoris.favDateTime">
+<span class="sig-name descname"><span class="pre">favDateTime</span></span><a class="headerlink" href="#agence_api.models.Favoris.favDateTime" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>FavDateTime</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.models.Favoris.get_next_by_favDateTime">
+<span class="sig-name descname"><span class="pre">get_next_by_favDateTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">favDateTime&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Favoris.get_next_by_favDateTime" title="Permalink to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#agence_api.models.Favoris.favDateTime" title="agence_api.models.Favoris.favDateTime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">favDateTime</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.models.Favoris.get_previous_by_favDateTime">
+<span class="sig-name descname"><span class="pre">get_previous_by_favDateTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">favDateTime&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Favoris.get_previous_by_favDateTime" title="Permalink to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#agence_api.models.Favoris.favDateTime" title="agence_api.models.Favoris.favDateTime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">favDateTime</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Favoris.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#agence_api.models.Favoris.id" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Favoris.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#agence_api.models.Favoris.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Favoris.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#agence_api.models.Favoris.user" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.ImmobilUser" title="agence_api.models.ImmobilUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImmobilUser</span></code></a></p>
+<p>User (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">favoris</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Favoris.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#agence_api.models.Favoris.user_id" title="Permalink to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#agence_api.models.Favoris.user" title="agence_api.models.Favoris.user"><code class="xref py py-class docutils literal notranslate"><span class="pre">user</span></code></a> instead.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.models.Image">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.models.</span></span><span class="sig-name descname"><span class="pre">Image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annonce</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Image" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.1)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>path</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ImageField" title="(in Django v4.1)"><em>ImageField</em></a>) – Path</p></li>
+</ul>
+</dd>
+</dl>
+<p>Relationship fields:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>annonce</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.Annonce" title="agence_api.models.Annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">Annonce</span></code></a>) – Annonce (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">image</span></code>)</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="agence_api.models.Image.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#agence_api.models.Image.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="agence_api.models.Image.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#agence_api.models.Image.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Image.annonce">
+<span class="sig-name descname"><span class="pre">annonce</span></span><a class="headerlink" href="#agence_api.models.Image.annonce" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.Annonce" title="agence_api.models.Annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">Annonce</span></code></a></p>
+<p>Annonce (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">image</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Image.annonce_id">
+<span class="sig-name descname"><span class="pre">annonce_id</span></span><a class="headerlink" href="#agence_api.models.Image.annonce_id" title="Permalink to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#agence_api.models.Image.annonce" title="agence_api.models.Image.annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">annonce</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Image.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#agence_api.models.Image.id" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Image.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#agence_api.models.Image.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Image.path">
+<span class="sig-name descname"><span class="pre">path</span></span><a class="headerlink" href="#agence_api.models.Image.path" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ImageField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageField</span></code></a></p>
+<p>Path</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.models.</span></span><span class="sig-name descname"><span class="pre">ImmobilUser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.ImmobilUser" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/topics/auth/customizing/#django.contrib.auth.models.AbstractUser" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractUser</span></code></a></p>
+<p>Custom user model inheriting from django’s <code class="docutils literal notranslate"><span class="pre">abstractUser</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.1)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>password</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><em>CharField</em></a>) – Password</p></li>
+<li><p><strong>last_login</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.1)"><em>DateTimeField</em></a>) – Last login</p></li>
+<li><p><strong>is_superuser</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.1)"><em>BooleanField</em></a>) – Superuser status. Designates that this user has all permissions without explicitly assigning them.</p></li>
+<li><p><strong>username</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><em>CharField</em></a>) – Username. Required. 150 characters or fewer. Letters, digits and &#64;/./+/-/_ only.</p></li>
+<li><p><strong>first_name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><em>CharField</em></a>) – First name</p></li>
+<li><p><strong>last_name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><em>CharField</em></a>) – Last name</p></li>
+<li><p><strong>is_staff</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.1)"><em>BooleanField</em></a>) – Staff status. Designates whether the user can log into this admin site.</p></li>
+<li><p><strong>is_active</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.1)"><em>BooleanField</em></a>) – Active. Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</p></li>
+<li><p><strong>date_joined</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.1)"><em>DateTimeField</em></a>) – Date joined</p></li>
+<li><p><strong>nom</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><em>CharField</em></a>) – Nom</p></li>
+<li><p><strong>prenom</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><em>CharField</em></a>) – Prenom</p></li>
+<li><p><strong>email</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.EmailField" title="(in Django v4.1)"><em>EmailField</em></a>) – Email</p></li>
+<li><p><strong>phone</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.IntegerField" title="(in Django v4.1)"><em>IntegerField</em></a>) – Phone</p></li>
+</ul>
+</dd>
+</dl>
+<p>Relationship fields:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>groups</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/auth/#django.contrib.auth.models.Group" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a>) – Groups. The groups this user belongs to. A user will get all permissions granted to each of their groups. (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">user_set</span></code>)</p></li>
+<li><p><strong>user_permissions</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/auth/#django.contrib.auth.models.Permission" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Permission</span></code></a>) – User permissions. Specific permissions for this user. (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">user_set</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Reverse relationships:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>logentry</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogEntry</span></code></a>) – All log entries of this user (related name of <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry.user" title="(in Django v4.1)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p></li>
+<li><p><strong>annonce</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Annonce" title="agence_api.models.Annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">Annonce</span></code></a>) – All annonces of this user (related name of <a class="reference internal" href="#agence_api.models.Annonce.annonceur" title="agence_api.models.Annonce.annonceur"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonceur</span></code></a>)</p></li>
+<li><p><strong>favoris</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Favoris" title="agence_api.models.Favoris"><code class="xref py py-class docutils literal notranslate"><span class="pre">Favoris</span></code></a>) – All favoriss of this user (related name of <a class="reference internal" href="#agence_api.models.Favoris.user" title="agence_api.models.Favoris.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p></li>
+<li><p><strong>annonceurs</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Offre" title="agence_api.models.Offre"><code class="xref py py-class docutils literal notranslate"><span class="pre">Offre</span></code></a>) – All annonceurs of this user (related name of <a class="reference internal" href="#agence_api.models.Offre.annonceur" title="agence_api.models.Offre.annonceur"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonceur</span></code></a>)</p></li>
+<li><p><strong>clients</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Offre" title="agence_api.models.Offre"><code class="xref py py-class docutils literal notranslate"><span class="pre">Offre</span></code></a>) – All clients of this user (related name of <a class="reference internal" href="#agence_api.models.Offre.client" title="agence_api.models.Offre.client"><code class="xref py py-attr docutils literal notranslate"><span class="pre">client</span></code></a>)</p></li>
+<li><p><strong>auth_token</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> from <code class="xref py py-class docutils literal notranslate"><span class="pre">Token</span></code>) – The auth token of this user (related name of <code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code>)</p></li>
+<li><p><strong>emailaddress</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <code class="xref py py-class docutils literal notranslate"><span class="pre">EmailAddress</span></code>) – All email addresses of this user (related name of <code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code>)</p></li>
+<li><p><strong>socialaccount</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <code class="xref py py-class docutils literal notranslate"><span class="pre">SocialAccount</span></code>) – All social accounts of this user (related name of <code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code>)</p></li>
+<li><p><strong>outstandingtoken</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <code class="xref py py-class docutils literal notranslate"><span class="pre">OutstandingToken</span></code>) – All outstanding tokens of this user (related name of <code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.annonce_set">
+<span class="sig-name descname"><span class="pre">annonce_set</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.annonce_set" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Annonce" title="agence_api.models.Annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">Annonce</span></code></a></p>
+<p>All annonces of this user (related name of <a class="reference internal" href="#agence_api.models.Annonce.annonceur" title="agence_api.models.Annonce.annonceur"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonceur</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.annonceurs">
+<span class="sig-name descname"><span class="pre">annonceurs</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.annonceurs" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Offre" title="agence_api.models.Offre"><code class="xref py py-class docutils literal notranslate"><span class="pre">Offre</span></code></a></p>
+<p>All annonceurs of this user (related name of <a class="reference internal" href="#agence_api.models.Offre.annonceur" title="agence_api.models.Offre.annonceur"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonceur</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.auth_token">
+<span class="sig-name descname"><span class="pre">auth_token</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.auth_token" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> from <code class="xref py py-class docutils literal notranslate"><span class="pre">Token</span></code></p>
+<p>The auth token of this user (related name of <code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.clients">
+<span class="sig-name descname"><span class="pre">clients</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.clients" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Offre" title="agence_api.models.Offre"><code class="xref py py-class docutils literal notranslate"><span class="pre">Offre</span></code></a></p>
+<p>All clients of this user (related name of <a class="reference internal" href="#agence_api.models.Offre.client" title="agence_api.models.Offre.client"><code class="xref py py-attr docutils literal notranslate"><span class="pre">client</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.date_joined">
+<span class="sig-name descname"><span class="pre">date_joined</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.date_joined" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Date joined</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.email">
+<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.email" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.EmailField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">EmailField</span></code></a></p>
+<p>Email</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.emailaddress_set">
+<span class="sig-name descname"><span class="pre">emailaddress_set</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.emailaddress_set" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <code class="xref py py-class docutils literal notranslate"><span class="pre">EmailAddress</span></code></p>
+<p>All email addresses of this user (related name of <code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.favoris_set">
+<span class="sig-name descname"><span class="pre">favoris_set</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.favoris_set" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#agence_api.models.Favoris" title="agence_api.models.Favoris"><code class="xref py py-class docutils literal notranslate"><span class="pre">Favoris</span></code></a></p>
+<p>All favoriss of this user (related name of <a class="reference internal" href="#agence_api.models.Favoris.user" title="agence_api.models.Favoris.user"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.first_name">
+<span class="sig-name descname"><span class="pre">first_name</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.first_name" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>First name</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.get_next_by_date_joined">
+<span class="sig-name descname"><span class="pre">get_next_by_date_joined</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">date_joined&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.ImmobilUser.get_next_by_date_joined" title="Permalink to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#agence_api.models.ImmobilUser.date_joined" title="agence_api.models.ImmobilUser.date_joined"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_joined</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.get_previous_by_date_joined">
+<span class="sig-name descname"><span class="pre">get_previous_by_date_joined</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">date_joined&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.ImmobilUser.get_previous_by_date_joined" title="Permalink to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#agence_api.models.ImmobilUser.date_joined" title="agence_api.models.ImmobilUser.date_joined"><code class="xref py py-attr docutils literal notranslate"><span class="pre">date_joined</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.groups">
+<span class="sig-name descname"><span class="pre">groups</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.groups" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/auth/#django.contrib.auth.models.Group" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></a></p>
+<p>Groups. The groups this user belongs to. A user will get all permissions granted to each of their groups. (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">user_set</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.id" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.is_active">
+<span class="sig-name descname"><span class="pre">is_active</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.is_active" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Active. Designates whether this user should be treated as active. Unselect this instead of deleting accounts.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.is_staff">
+<span class="sig-name descname"><span class="pre">is_staff</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.is_staff" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Staff status. Designates whether the user can log into this admin site.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.is_superuser">
+<span class="sig-name descname"><span class="pre">is_superuser</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.is_superuser" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Superuser status. Designates that this user has all permissions without explicitly assigning them.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.last_login">
+<span class="sig-name descname"><span class="pre">last_login</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.last_login" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Last login</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.last_name">
+<span class="sig-name descname"><span class="pre">last_name</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.last_name" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Last name</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.logentry_set">
+<span class="sig-name descname"><span class="pre">logentry_set</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.logentry_set" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogEntry</span></code></a></p>
+<p>All log entries of this user (related name of <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/admin/#django.contrib.admin.models.LogEntry.user" title="(in Django v4.1)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.nom">
+<span class="sig-name descname"><span class="pre">nom</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.nom" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Nom</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.outstandingtoken_set">
+<span class="sig-name descname"><span class="pre">outstandingtoken_set</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.outstandingtoken_set" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <code class="xref py py-class docutils literal notranslate"><span class="pre">OutstandingToken</span></code></p>
+<p>All outstanding tokens of this user (related name of <code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.password" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Password</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.phone">
+<span class="sig-name descname"><span class="pre">phone</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.phone" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.IntegerField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerField</span></code></a></p>
+<p>Phone</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.prenom">
+<span class="sig-name descname"><span class="pre">prenom</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.prenom" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Prenom</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.socialaccount_set">
+<span class="sig-name descname"><span class="pre">socialaccount_set</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.socialaccount_set" title="Permalink to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <code class="xref py py-class docutils literal notranslate"><span class="pre">SocialAccount</span></code></p>
+<p>All social accounts of this user (related name of <code class="xref py py-attr docutils literal notranslate"><span class="pre">user</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.user_permissions">
+<span class="sig-name descname"><span class="pre">user_permissions</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.user_permissions" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/contrib/auth/#django.contrib.auth.models.Permission" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Permission</span></code></a></p>
+<p>User permissions. Specific permissions for this user. (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">user_set</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.ImmobilUser.username">
+<span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#agence_api.models.ImmobilUser.username" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Username. Required. 150 characters or fewer. Letters, digits and &#64;/./+/-/_ only.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.models.Location">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.models.</span></span><span class="sig-name descname"><span class="pre">Location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">city</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annonce</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Location" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.1)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>city</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><em>CharField</em></a>) – City</p></li>
+</ul>
+</dd>
+</dl>
+<p>Relationship fields:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>annonce</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> to <a class="reference internal" href="#agence_api.models.Annonce" title="agence_api.models.Annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">Annonce</span></code></a>) – Annonce (related name: <a class="reference internal" href="#agence_api.models.Annonce.location" title="agence_api.models.Annonce.location"><code class="xref py py-attr docutils literal notranslate"><span class="pre">location</span></code></a>)</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="agence_api.models.Location.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#agence_api.models.Location.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="agence_api.models.Location.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#agence_api.models.Location.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Location.annonce">
+<span class="sig-name descname"><span class="pre">annonce</span></span><a class="headerlink" href="#agence_api.models.Location.annonce" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.OneToOneField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">OneToOneField</span></code></a> to <a class="reference internal" href="#agence_api.models.Annonce" title="agence_api.models.Annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">Annonce</span></code></a></p>
+<p>Annonce (related name: <a class="reference internal" href="#agence_api.models.Annonce.location" title="agence_api.models.Annonce.location"><code class="xref py py-attr docutils literal notranslate"><span class="pre">location</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Location.annonce_id">
+<span class="sig-name descname"><span class="pre">annonce_id</span></span><a class="headerlink" href="#agence_api.models.Location.annonce_id" title="Permalink to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#agence_api.models.Location.annonce" title="agence_api.models.Location.annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">annonce</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Location.city">
+<span class="sig-name descname"><span class="pre">city</span></span><a class="headerlink" href="#agence_api.models.Location.city" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>City</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Location.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#agence_api.models.Location.id" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Location.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#agence_api.models.Location.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.models.Offre">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.models.</span></span><span class="sig-name descname"><span class="pre">Offre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annonceur</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annonce</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dateOffre</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Offre" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.1)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>message</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.TextField" title="(in Django v4.1)"><em>TextField</em></a>) – Message</p></li>
+<li><p><strong>prix</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.IntegerField" title="(in Django v4.1)"><em>IntegerField</em></a>) – Prix</p></li>
+<li><p><strong>dateOffre</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.1)"><em>DateTimeField</em></a>) – DateOffre</p></li>
+</ul>
+</dd>
+</dl>
+<p>Relationship fields:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>annonceur</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.ImmobilUser" title="agence_api.models.ImmobilUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImmobilUser</span></code></a>) – Annonceur (related name: <a class="reference internal" href="#agence_api.models.ImmobilUser.annonceurs" title="agence_api.models.ImmobilUser.annonceurs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonceurs</span></code></a>)</p></li>
+<li><p><strong>client</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.ImmobilUser" title="agence_api.models.ImmobilUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImmobilUser</span></code></a>) – Client (related name: <a class="reference internal" href="#agence_api.models.ImmobilUser.clients" title="agence_api.models.ImmobilUser.clients"><code class="xref py py-attr docutils literal notranslate"><span class="pre">clients</span></code></a>)</p></li>
+<li><p><strong>annonce</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.Annonce" title="agence_api.models.Annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">Annonce</span></code></a>) – Annonce (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">offre</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="agence_api.models.Offre.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#agence_api.models.Offre.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="agence_api.models.Offre.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#agence_api.models.Offre.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Offre.annonce">
+<span class="sig-name descname"><span class="pre">annonce</span></span><a class="headerlink" href="#agence_api.models.Offre.annonce" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.Annonce" title="agence_api.models.Annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">Annonce</span></code></a></p>
+<p>Annonce (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">offre</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Offre.annonce_id">
+<span class="sig-name descname"><span class="pre">annonce_id</span></span><a class="headerlink" href="#agence_api.models.Offre.annonce_id" title="Permalink to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#agence_api.models.Offre.annonce" title="agence_api.models.Offre.annonce"><code class="xref py py-class docutils literal notranslate"><span class="pre">annonce</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Offre.annonceur">
+<span class="sig-name descname"><span class="pre">annonceur</span></span><a class="headerlink" href="#agence_api.models.Offre.annonceur" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.ImmobilUser" title="agence_api.models.ImmobilUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImmobilUser</span></code></a></p>
+<p>Annonceur (related name: <a class="reference internal" href="#agence_api.models.ImmobilUser.annonceurs" title="agence_api.models.ImmobilUser.annonceurs"><code class="xref py py-attr docutils literal notranslate"><span class="pre">annonceurs</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Offre.annonceur_id">
+<span class="sig-name descname"><span class="pre">annonceur_id</span></span><a class="headerlink" href="#agence_api.models.Offre.annonceur_id" title="Permalink to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#agence_api.models.Offre.annonceur" title="agence_api.models.Offre.annonceur"><code class="xref py py-class docutils literal notranslate"><span class="pre">annonceur</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Offre.client">
+<span class="sig-name descname"><span class="pre">client</span></span><a class="headerlink" href="#agence_api.models.Offre.client" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#agence_api.models.ImmobilUser" title="agence_api.models.ImmobilUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImmobilUser</span></code></a></p>
+<p>Client (related name: <a class="reference internal" href="#agence_api.models.ImmobilUser.clients" title="agence_api.models.ImmobilUser.clients"><code class="xref py py-attr docutils literal notranslate"><span class="pre">clients</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Offre.client_id">
+<span class="sig-name descname"><span class="pre">client_id</span></span><a class="headerlink" href="#agence_api.models.Offre.client_id" title="Permalink to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#agence_api.models.Offre.client" title="agence_api.models.Offre.client"><code class="xref py py-class docutils literal notranslate"><span class="pre">client</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Offre.dateOffre">
+<span class="sig-name descname"><span class="pre">dateOffre</span></span><a class="headerlink" href="#agence_api.models.Offre.dateOffre" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>DateOffre</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.models.Offre.get_next_by_dateOffre">
+<span class="sig-name descname"><span class="pre">get_next_by_dateOffre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">dateOffre&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Offre.get_next_by_dateOffre" title="Permalink to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#agence_api.models.Offre.dateOffre" title="agence_api.models.Offre.dateOffre"><code class="xref py py-attr docutils literal notranslate"><span class="pre">dateOffre</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.models.Offre.get_previous_by_dateOffre">
+<span class="sig-name descname"><span class="pre">get_previous_by_dateOffre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">dateOffre&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.models.Offre.get_previous_by_dateOffre" title="Permalink to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#agence_api.models.Offre.dateOffre" title="agence_api.models.Offre.dateOffre"><code class="xref py py-attr docutils literal notranslate"><span class="pre">dateOffre</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.1)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Offre.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#agence_api.models.Offre.id" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Offre.message">
+<span class="sig-name descname"><span class="pre">message</span></span><a class="headerlink" href="#agence_api.models.Offre.message" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.TextField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextField</span></code></a></p>
+<p>Message</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Offre.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#agence_api.models.Offre.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.models.Offre.prix">
+<span class="sig-name descname"><span class="pre">prix</span></span><a class="headerlink" href="#agence_api.models.Offre.prix" title="Permalink to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.IntegerField" title="(in Django v4.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerField</span></code></a></p>
+<p>Prix</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agence_api.serializers">
+<span id="serializers"></span><h2>serializers<a class="headerlink" href="#module-agence_api.serializers" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.serializers.AnnonceSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.serializers.</span></span><span class="sig-name descname"><span class="pre">AnnonceSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.serializers.AnnonceSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.serializers.FavoriSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.serializers.</span></span><span class="sig-name descname"><span class="pre">FavoriSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.serializers.FavoriSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.serializers.OffreSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.serializers.</span></span><span class="sig-name descname"><span class="pre">OffreSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.serializers.OffreSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.serializers.userSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.serializers.</span></span><span class="sig-name descname"><span class="pre">userSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.serializers.userSerializer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-agence_api.tests">
+<span id="tests"></span><h2>tests<a class="headerlink" href="#module-agence_api.tests" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-agence_api.urls">
+<span id="urls"></span><h2>urls<a class="headerlink" href="#module-agence_api.urls" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-agence_api.views">
+<span id="views"></span><h2>views<a class="headerlink" href="#module-agence_api.views" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceDetails">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.views.</span></span><span class="sig-name descname"><span class="pre">AnnonceDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.AnnonceDetails" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">RetrieveAPIView</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceDetails.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">QuerySet</span></em><a class="headerlink" href="#agence_api.views.AnnonceDetails.queryset" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceDetails.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#agence_api.views.AnnonceDetails.serializer_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#agence_api.serializers.AnnonceSerializer" title="agence_api.serializers.AnnonceSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnnonceSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.views.</span></span><span class="sig-name descname"><span class="pre">AnnonceList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.AnnonceList" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ListAPIView</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceList.filter_backends">
+<span class="sig-name descname"><span class="pre">filter_backends</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(&lt;class</span> <span class="pre">'django_filters.rest_framework.backends.DjangoFilterBackend'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'rest_framework.filters.SearchFilter'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'rest_framework.filters.OrderingFilter'&gt;)</span></em><a class="headerlink" href="#agence_api.views.AnnonceList.filter_backends" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceList.filterset_class">
+<span class="sig-name descname"><span class="pre">filterset_class</span></span><a class="headerlink" href="#agence_api.views.AnnonceList.filterset_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#agence_api.filters.AnnonceFilter" title="agence_api.filters.AnnonceFilter"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnnonceFilter</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceList.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['insertDate']</span></em><a class="headerlink" href="#agence_api.views.AnnonceList.ordering" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceList.ordering_fields">
+<span class="sig-name descname"><span class="pre">ordering_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['insertDate']</span></em><a class="headerlink" href="#agence_api.views.AnnonceList.ordering_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceList.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">QuerySet</span></em><a class="headerlink" href="#agence_api.views.AnnonceList.queryset" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceList.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#agence_api.views.AnnonceList.serializer_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#agence_api.serializers.AnnonceSerializer" title="agence_api.serializers.AnnonceSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnnonceSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceRemove">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.views.</span></span><span class="sig-name descname"><span class="pre">AnnonceRemove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.AnnonceRemove" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DestroyAPIView</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceRemove.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">QuerySet</span></em><a class="headerlink" href="#agence_api.views.AnnonceRemove.queryset" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.AnnonceRemove.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#agence_api.views.AnnonceRemove.serializer_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#agence_api.serializers.AnnonceSerializer" title="agence_api.serializers.AnnonceSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnnonceSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.views.DeposerAnnonce">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.views.</span></span><span class="sig-name descname"><span class="pre">DeposerAnnonce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.DeposerAnnonce" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CreateAPIView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.views.DeposerAnnonce.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.DeposerAnnonce.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.views.DeposerAnnonce.perform_create">
+<span class="sig-name descname"><span class="pre">perform_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serializer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.DeposerAnnonce.perform_create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.DeposerAnnonce.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#agence_api.views.DeposerAnnonce.serializer_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#agence_api.serializers.AnnonceSerializer" title="agence_api.serializers.AnnonceSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnnonceSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.views.GoogleLogin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.views.</span></span><span class="sig-name descname"><span class="pre">GoogleLogin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.GoogleLogin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SocialLoginView</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.GoogleLogin.adapter_class">
+<span class="sig-name descname"><span class="pre">adapter_class</span></span><a class="headerlink" href="#agence_api.views.GoogleLogin.adapter_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">GoogleOAuth2Adapter</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.GoogleLogin.callback_url">
+<span class="sig-name descname"><span class="pre">callback_url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'index'</span></em><a class="headerlink" href="#agence_api.views.GoogleLogin.callback_url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.GoogleLogin.client_class">
+<span class="sig-name descname"><span class="pre">client_class</span></span><a class="headerlink" href="#agence_api.views.GoogleLogin.client_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">OAuth2Client</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.views.ListMarkedAnnonce">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.views.</span></span><span class="sig-name descname"><span class="pre">ListMarkedAnnonce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.ListMarkedAnnonce" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ListAPIView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.views.ListMarkedAnnonce.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.ListMarkedAnnonce.get_queryset" title="Permalink to this definition"></a></dt>
+<dd><p>Get the list of items for this view.
+This must be an iterable, and may be a queryset.
+Defaults to using <cite>self.queryset</cite>.</p>
+<p>This method should always be used rather than accessing <cite>self.queryset</cite>
+directly, as <cite>self.queryset</cite> gets evaluated only once, and those results
+are cached for all subsequent requests.</p>
+<p>You may want to override this if you need to provide different
+querysets depending on the incoming request.</p>
+<p>(Eg. return a list of items that is specific to the user)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.ListMarkedAnnonce.permission_classes">
+<span class="sig-name descname"><span class="pre">permission_classes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;class</span> <span class="pre">'rest_framework.permissions.IsAuthenticated'&gt;]</span></em><a class="headerlink" href="#agence_api.views.ListMarkedAnnonce.permission_classes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.ListMarkedAnnonce.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#agence_api.views.ListMarkedAnnonce.serializer_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#agence_api.serializers.FavoriSerializer" title="agence_api.serializers.FavoriSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FavoriSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.views.ListOffers">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.views.</span></span><span class="sig-name descname"><span class="pre">ListOffers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.ListOffers" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ListAPIView</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.ListOffers.permission_classes">
+<span class="sig-name descname"><span class="pre">permission_classes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;class</span> <span class="pre">'rest_framework.permissions.IsAuthenticated'&gt;]</span></em><a class="headerlink" href="#agence_api.views.ListOffers.permission_classes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.ListOffers.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#agence_api.views.ListOffers.queryset" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.ListOffers.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#agence_api.views.ListOffers.serializer_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#agence_api.serializers.OffreSerializer" title="agence_api.serializers.OffreSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">OffreSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.views.MakeOffer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.views.</span></span><span class="sig-name descname"><span class="pre">MakeOffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.MakeOffer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CreateAPIView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.views.MakeOffer.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.MakeOffer.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.views.MakeOffer.perform_create">
+<span class="sig-name descname"><span class="pre">perform_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serializer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.MakeOffer.perform_create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.MakeOffer.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#agence_api.views.MakeOffer.serializer_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#agence_api.serializers.OffreSerializer" title="agence_api.serializers.OffreSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">OffreSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.views.MarkAnnonce">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.views.</span></span><span class="sig-name descname"><span class="pre">MarkAnnonce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.MarkAnnonce" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">CreateAPIView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.views.MarkAnnonce.create">
+<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.MarkAnnonce.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.views.MarkAnnonce.perform_create">
+<span class="sig-name descname"><span class="pre">perform_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serializer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.MarkAnnonce.perform_create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.MarkAnnonce.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#agence_api.views.MarkAnnonce.serializer_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#agence_api.serializers.FavoriSerializer" title="agence_api.serializers.FavoriSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FavoriSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.views.OwnerAnnonceList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.views.</span></span><span class="sig-name descname"><span class="pre">OwnerAnnonceList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.OwnerAnnonceList" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ListAPIView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.views.OwnerAnnonceList.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.OwnerAnnonceList.get_queryset" title="Permalink to this definition"></a></dt>
+<dd><p>Get the list of items for this view.
+This must be an iterable, and may be a queryset.
+Defaults to using <cite>self.queryset</cite>.</p>
+<p>This method should always be used rather than accessing <cite>self.queryset</cite>
+directly, as <cite>self.queryset</cite> gets evaluated only once, and those results
+are cached for all subsequent requests.</p>
+<p>You may want to override this if you need to provide different
+querysets depending on the incoming request.</p>
+<p>(Eg. return a list of items that is specific to the user)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.OwnerAnnonceList.permission_classes">
+<span class="sig-name descname"><span class="pre">permission_classes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;class</span> <span class="pre">'rest_framework.permissions.IsAuthenticated'&gt;]</span></em><a class="headerlink" href="#agence_api.views.OwnerAnnonceList.permission_classes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.OwnerAnnonceList.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#agence_api.views.OwnerAnnonceList.serializer_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#agence_api.serializers.AnnonceSerializer" title="agence_api.serializers.AnnonceSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnnonceSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agence_api.views.UnmarkAnnonce">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">agence_api.views.</span></span><span class="sig-name descname"><span class="pre">UnmarkAnnonce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.UnmarkAnnonce" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DestroyAPIView</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.views.UnmarkAnnonce.destroy">
+<span class="sig-name descname"><span class="pre">destroy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.UnmarkAnnonce.destroy" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agence_api.views.UnmarkAnnonce.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.UnmarkAnnonce.get_queryset" title="Permalink to this definition"></a></dt>
+<dd><p>Get the list of items for this view.
+This must be an iterable, and may be a queryset.
+Defaults to using <cite>self.queryset</cite>.</p>
+<p>This method should always be used rather than accessing <cite>self.queryset</cite>
+directly, as <cite>self.queryset</cite> gets evaluated only once, and those results
+are cached for all subsequent requests.</p>
+<p>You may want to override this if you need to provide different
+querysets depending on the incoming request.</p>
+<p>(Eg. return a list of items that is specific to the user)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.UnmarkAnnonce.permission_classes">
+<span class="sig-name descname"><span class="pre">permission_classes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;class</span> <span class="pre">'rest_framework.permissions.IsAuthenticated'&gt;]</span></em><a class="headerlink" href="#agence_api.views.UnmarkAnnonce.permission_classes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agence_api.views.UnmarkAnnonce.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#agence_api.views.UnmarkAnnonce.serializer_class" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#agence_api.serializers.FavoriSerializer" title="agence_api.serializers.FavoriSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">FavoriSerializer</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="agence_api.views.index">
+<span class="sig-prename descclassname"><span class="pre">agence_api.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agence_api.views.index" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>URL path(s):</dt><dd><ul class="simple">
+<li><p>agence-api/$</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Indices and tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Equipe-IGL.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

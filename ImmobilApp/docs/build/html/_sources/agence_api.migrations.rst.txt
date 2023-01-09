@@ -1,0 +1,77 @@
+agence\_api.migrations package
+==============================
+
+Submodules
+----------
+
+agence\_api.migrations.0001\_initial module
+-------------------------------------------
+
+.. automodule:: agence_api.migrations.0001_initial
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+agence\_api.migrations.0002\_alter\_annonce\_annonceur\_favoris module
+----------------------------------------------------------------------
+
+.. automodule:: agence_api.migrations.0002_alter_annonce_annonceur_favoris
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+agence\_api.migrations.0003\_alter\_annonce\_annonceur module
+-------------------------------------------------------------
+
+.. automodule:: agence_api.migrations.0003_alter_annonce_annonceur
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+agence\_api.migrations.0004\_annonce\_insertdate\_annonce\_titre\_alter\_favoris\_user\_and\_more module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: agence_api.migrations.0004_annonce_insertdate_annonce_titre_alter_favoris_user_and_more
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+agence\_api.migrations.0005\_alter\_annonce\_insertdate\_alter\_location\_city module
+-------------------------------------------------------------------------------------
+
+.. automodule:: agence_api.migrations.0005_alter_annonce_insertdate_alter_location_city
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+agence\_api.migrations.0006\_alter\_annonce\_insertdate module
+--------------------------------------------------------------
+
+.. automodule:: agence_api.migrations.0006_alter_annonce_insertdate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+agence\_api.migrations.0007\_offre\_rename\_suface\_annonce\_surface\_delete\_message\_and\_more module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: agence_api.migrations.0007_offre_rename_suface_annonce_surface_delete_message_and_more
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+agence\_api.migrations.0008\_favoris\_favdatetime\_offre\_dateoffre module
+--------------------------------------------------------------------------
+
+.. automodule:: agence_api.migrations.0008_favoris_favdatetime_offre_dateoffre
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: agence_api.migrations
+   :members:
+   :undoc-members:
+   :show-inheritance:

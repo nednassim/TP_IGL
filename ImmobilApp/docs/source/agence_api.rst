@@ -1,0 +1,66 @@
+agence\_api
+=====================
+
+admin 
+------------------------
+
+.. automodule:: agence_api.admin
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+apps 
+-----------------------
+
+.. automodule:: agence_api.apps
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+filters 
+--------------------------
+
+.. automodule:: agence_api.filters
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+models 
+-------------------------
+
+.. automodule:: agence_api.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+serializers 
+------------------------------
+
+.. automodule:: agence_api.serializers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+tests 
+------------------------
+
+.. automodule:: agence_api.tests
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+urls 
+-----------------------
+
+.. automodule:: agence_api.urls
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+views 
+------------------------
+
+.. automodule:: agence_api.views
+   :members:
+   :undoc-members:
+   :show-inheritance:

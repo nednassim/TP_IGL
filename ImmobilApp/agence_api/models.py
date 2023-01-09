@@ -7,7 +7,9 @@ from django.conf import settings
 from django.db import models
 
 class ImmobilUser(AbstractUser):
+    '''Custom user model inheriting from django's ``abstractUser``
 
+    '''
     # user_permissions=[]
     nom = models.CharField(max_length=20, default="no name")
     prenom = models.CharField(max_length=20, default="no name")
@@ -58,6 +60,7 @@ class Favoris(models.Model):
 
     annonce = models.ForeignKey(Annonce, on_delete=models.CASCADE)
     user = models.ForeignKey(ImmobilUser, on_delete=models.CASCADE, blank=True)
+    favDateTime = models.DateTimeField(auto_now_add=True, blank=True)
 
     class Meta:
         unique_together = ('annonce', 'user')
@@ -69,3 +72,4 @@ class Offre(models.Model):
     annonce = models.ForeignKey(Annonce, on_delete=models.CASCADE)
     message = models.TextField(max_length=1000)
     prix = models.IntegerField()
+    dateOffre = models.DateTimeField(auto_now_add=True, blank=True)
