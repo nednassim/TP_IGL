@@ -28,7 +28,7 @@ def index(request):
     return HttpResponse('hello world')
 
 class AnnonceList(generics.ListAPIView):
-    # permission_classes = [permissions.IsAuthenticated, ]
+    permission_classes = [permissions.IsAuthenticated, ]
     serializer_class = AnnonceSerializer
     queryset = Annonce.objects.all()
     ordering = ['insertDate']
@@ -44,12 +44,12 @@ class OwnerAnnonceList(generics.ListAPIView):
         return Annonce.objects.filter(annonceur=self.request.user)
 
 class AnnonceDetails(generics.RetrieveAPIView):
-    # permission_classes=[permissions.IsAuthenticated]
+    permission_classes=[permissions.IsAuthenticated]
     serializer_class=AnnonceSerializer
     queryset = Annonce.objects.all()
 
 class AnnonceRemove(generics.DestroyAPIView):
-    # permission_classes=[permissions.IsAuthenticated]
+    permission_classes=[permissions.IsAuthenticated]
     serializer_class=AnnonceSerializer
     queryset = Annonce.objects.all()
     
@@ -76,7 +76,7 @@ class ListMarkedAnnonce(generics.ListAPIView):
 
 class MarkAnnonce(generics.CreateAPIView):
     
-    # permission_classes=[permissions.IsAuthenticated]
+    permission_classes=[permissions.IsAuthenticated]
     serializer_class=FavoriSerializer
 
     def create(self, request, *args, **kwargs):
