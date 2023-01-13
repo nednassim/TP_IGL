@@ -10,10 +10,10 @@ export default function Footer() {
                 <p className='text-2xl font-bold'>Follow us</p>
                 <div className='flex gap-x-4'>
                     <img src="/social/facebook.png" alt="facebook" />
-                    <img src="/social/facebook.png" alt="facebook" />
-                    <img src="/social/facebook.png" alt="facebook" />
-                    <img src="/social/facebook.png" alt="facebook" />
-                    <img src="/social/facebook.png" alt="facebook" />
+                    <img src="/social/instagram.png" alt="facebook" />
+                    <img src="/social/twitter.png" alt="facebook" />
+                    <img src="/social/linkedin.png" alt="facebook" />
+                    <img src="/social/discord.png" alt="facebook" />
                 </div>
             </div>
         </div>

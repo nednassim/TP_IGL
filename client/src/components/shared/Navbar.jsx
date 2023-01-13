@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Navbar() {
+export default function Navbar({ colorChange }) {
   return (
-    <div className='flex justify-between items-center text-lg py-4 px-8'>
+    <div className={`flex justify-between items-center text-lg py-4 px-8 ${colorChange ? "bg-[#6DA2E0]" : "bg-transparent"}`}>
         <img src="/logo_white.png" alt="White Logo" />
         <div className='flex gap-x-8'>
             <a href='#'>Home</a>
