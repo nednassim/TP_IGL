@@ -48,13 +48,22 @@ class Annonce(models.Model): # required in insertion: [cat,type,desc,surf,prix] 
 
 class Location(models.Model):
 
+    adress = models.CharField(max_length=100)
+    wilaya = models.CharField(max_length=30)
     city = models.CharField(max_length=30)
+    lat = models.FloatField(default= 36.7)
+    lng = models.FloatField(default= 3)
     annonce = models.OneToOneField(Annonce, on_delete=models.CASCADE)
 
 class Image(models.Model):
 
-    annonce = models.ForeignKey(Annonce, on_delete=models.CASCADE, null=True, blank=True)
-    path = models.ImageField(upload_to='annonce/')
+    annonce = models.ForeignKey(Annonce, on_delete=models.CASCADE)
+    path = models.ImageField(upload_to='annonce_images')
+    
+    def delete(self, *args, **kwargs):
+        self.path.delete(save=False)
+        super().delete(*args, **kwargs)
+
 
 class Favoris(models.Model):
 

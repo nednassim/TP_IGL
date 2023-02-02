@@ -1,13 +1,24 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import Annonce, Favoris, Offre
+from .models import Annonce, Favoris, Offre, Image
+
+class ImageSerializer(serializers.ModelSerializer):
+
+    class Meta:
+
+        model = Image
+        fields = ('__all__')
+
 
 class AnnonceSerializer(serializers.ModelSerializer):
+    
+    image_set = ImageSerializer(many=True)
 
     class Meta:
 
         model = Annonce
         fields = ('__all__')
+
 
 class userSerializer(serializers.ModelSerializer):
     annonces = serializers.PrimaryKeyRelatedField(many=True, queryset=Annonce.objects.all())

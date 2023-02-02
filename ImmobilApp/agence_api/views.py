@@ -5,10 +5,9 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
 from rest_framework import generics
-from .serializers import AnnonceSerializer, FavoriSerializer, OffreSerializer
+from .serializers import AnnonceSerializer, FavoriSerializer, OffreSerializer,ImageSerializer
 from .models import Annonce, Favoris, Offre, ImmobilUser
-
-
+from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
 
 from rest_framework import permissions
@@ -23,6 +22,10 @@ from django.core.exceptions import ObjectDoesNotExist
 from django_filters import rest_framework as dj_filters
 
 from .filters import AnnonceFilter
+
+import folium
+import geocoder
+from .MarkableMap import MarkerLayer
 
 def index(request):
     return HttpResponse('hello world')
@@ -65,6 +68,20 @@ class DeposerAnnonce(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(annonceur=self.request.user)
+
+
+class AjouterImage(generics.CreateAPIView):
+    serializer_class= ImageSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def perform_create(self, serializer):
+        serializer.save()
 
 class ListMarkedAnnonce(generics.ListAPIView):
     
@@ -129,6 +146,35 @@ class GoogleLogin(SocialLoginView): # if you want to use Authorization Code Gran
     adapter_class = GoogleOAuth2Adapter
     callback_url = 'index'
     client_class = OAuth2Client
+
+#for the announcer to conform or change the location on the map
+class MarkableMap(APIView):
+    def get(self, request, *args, **kwargs):
+        adress = kwargs.get('adress')
+        city = kwargs.get('city')
+        wilaya = kwargs.get('wilaya')
+        loc = geocoder.osm(adress+', '+city+', '+wilaya+', '+'algerie')
+        if loc.osm == None:
+            loc = geocoder.osm(wilaya)
+        cords= [loc.lat,loc.lng]
+        map = folium.Map(location=cords,zoom_start=16)
+        mark = folium.Marker(location= cords, 
+                icon=folium.Icon(color='green', icon='home')).add_to(map)
+        map.add_child(MarkerLayer(old = mark))
+        return( JsonResponse({'map_html': map._repr_html_()}, safe= True))
+        #return HttpResponse(map._repr_html_())
+
+#for displaying the map on the ad page
+class StaticMap(APIView):
+    def get(self, request, *args, **kwargs):
+        cords = [kwargs.get('lat'),kwargs.get('lng')]
+        map = folium.Map(location=cords,zoom_start=16)
+        mark = folium.Marker(location= cords, 
+                icon=folium.Icon(color='green', icon='home')).add_to(map)
+        return( JsonResponse({'map_html': map._repr_html_()}, safe= True))
+        #return HttpResponse(map._repr_html_())
+
+
 
 # class GoogleLogin(SocialLoginView): # if you want to use Implicit Grant, use this
 #     adapter_class = GoogleOAuth2Adapter

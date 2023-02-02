@@ -43,6 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    #cloudinary storage
+
+    'cloudinary_storage',
+    'cloudinary',
+
     # 'front',
     
     'agence_api',
@@ -256,6 +261,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+#cloudinary cridentials
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dg1vm1zpr',
+    'API_KEY': '493722868355542',
+    'API_SECRET': 'VTy2TGrN1Ba48zrdcm3eGOy5N-o'
+}
+
+MEDIA_URL = ''  # or any prefix you choose
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

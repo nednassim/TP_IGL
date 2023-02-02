@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from . import Converter
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -23,11 +24,14 @@ urlpatterns = [
     path('annonces/<int:pk>/', views.AnnonceDetails.as_view(), name='detail annonce'), # consulter l'annonce de l'id pk
     path('annonces/<int:pk>/delete/', views.AnnonceRemove.as_view(), name='detail annonce'), # consulter l'annonce de l'id pk
     path('deposer-annonce/',views.DeposerAnnonce.as_view(), name='deposer une annonce'),
+    path('deposer-image/',views.AjouterImage.as_view(), name='deposer une Image'),
     path('favoris/<int:annonce_pk>/add/', views.MarkAnnonce.as_view(), name='add to favoris'), # provide annonce_id
     path('favoris/<int:annonce_pk>/delete/', views.UnmarkAnnonce.as_view(), name='delete from favoris'), # provide annonce_id
     path('favoris/list', views.ListMarkedAnnonce.as_view(), name='afficher liste favoris'),
     path('offres/', views.ListOffers.as_view(), name='Liste des messages offres'),
     path('proposer-offre/', views.MakeOffer.as_view(), name='proposer un offre'),
+    path('map/<str:adress>/<str:city>/<str:wilaya>/', views.MarkableMap.as_view()),
+    path('map/<float:lat>/<float:lng>/', views.StaticMap.as_view()),
     # path('swagger-ui/', TemplateView.as_view(
     #     template_name='swagger-ui.html',
     #     extra_context={'schema_url':'openapi-schema'}
