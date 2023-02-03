@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
 from rest_framework import generics
-from .serializers import AnnonceSerializer, FavoriSerializer, OffreSerializer,ImageSerializer
+from .serializers import AnnonceSerializer, FavoriSerializer, OffreSerializer,ImageSerializer, LocationSerializer
 from .models import Annonce, Favoris, Offre, ImmobilUser
 from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
@@ -25,10 +25,10 @@ from .filters import AnnonceFilter
 
 import folium
 import geocoder
-from .MarkableMap import MarkerLayer
+from .markableMap import MarkerLayer
 
 def index(request):
-    return HttpResponse('hello world')
+    return HttpResponse('hello world')  
 
 class AnnonceList(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated, ]
@@ -47,7 +47,7 @@ class OwnerAnnonceList(generics.ListAPIView):
         return Annonce.objects.filter(annonceur=self.request.user)
 
 class AnnonceDetails(generics.RetrieveAPIView):
-    permission_classes=[permissions.IsAuthenticated]
+    #permission_classes=[permissions.IsAuthenticated]
     serializer_class=AnnonceSerializer
     queryset = Annonce.objects.all()
 
@@ -72,6 +72,19 @@ class DeposerAnnonce(generics.CreateAPIView):
 
 class AjouterImage(generics.CreateAPIView):
     serializer_class= ImageSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def perform_create(self, serializer):
+        serializer.save()
+
+class AjouterLocation(generics.CreateAPIView):
+    serializer_class= LocationSerializer
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -162,7 +175,7 @@ class MarkableMap(APIView):
                 icon=folium.Icon(color='green', icon='home')).add_to(map)
         map.add_child(MarkerLayer(old = mark))
         return( JsonResponse({'map_html': map._repr_html_()}, safe= True))
-        #return HttpResponse(map._repr_html_())
+        #return HttpResponse(map._repr_html_()+"<sctipt>alert('x')</script>")
 
 #for displaying the map on the ad page
 class StaticMap(APIView):

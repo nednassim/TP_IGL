@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import Annonce, Favoris, Offre, Image
+from .models import Annonce, Favoris, Offre, Image,Location
 
 class ImageSerializer(serializers.ModelSerializer):
 
@@ -10,9 +10,18 @@ class ImageSerializer(serializers.ModelSerializer):
         fields = ('__all__')
 
 
+class LocationSerializer(serializers.ModelSerializer):
+
+    class Meta:
+
+        model = Location
+        fields = ['adress','wilaya','city','annonce']
+
+
 class AnnonceSerializer(serializers.ModelSerializer):
     
-    image_set = ImageSerializer(many=True)
+    location = LocationSerializer(many=False, read_only=True)
+    image_set = ImageSerializer(many=True, read_only=True)
 
     class Meta:
 
@@ -36,4 +45,4 @@ class OffreSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Offre
-        fields = ('annonceur', 'client', 'message', 'annonce', 'prix')
+        fields = ('id', 'annonceur', 'client', 'message', 'annonce', 'prix')

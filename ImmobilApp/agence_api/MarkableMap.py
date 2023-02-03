@@ -28,8 +28,8 @@ class MarkerLayer(folium.ClickForMarker) :
                     old_mark = new_mark;
                     var lat = e.latlng.lat.toFixed(4),
                        lng = e.latlng.lng.toFixed(4);
-                       sessionStorage.setItem("lat",lat)
-                       sessionStorage.setItem("lng",lng)
+                       var cords = [lat,lng]
+                       window.parent.postMessage(cords)
                     };
                     
                 {{this._parent.get_name()}}.on('click', newMarker);
