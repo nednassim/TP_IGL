@@ -73,7 +73,7 @@ const EstatePage = () => {
               </ListGroup>
             </Col>
           </Row>
-          <Row className="justify-content-center mt-3">
+          <Row className="justify-content-center">
             <Col md={6}>
               <h2 className="text-center">Reviews</h2>
               {product.reviews.length === 0 && <Message>No Reviews</Message>}
