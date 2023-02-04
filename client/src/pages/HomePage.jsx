@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import Product from '../components/Product';
-import Message from '../components/Message';
 import Loader from '../components/Loader.jsx';
 import Paginate from '../components/Paginate';
 import ProductCarousel from '../components/ProductCarousel';
@@ -32,11 +30,44 @@ const HomePage = ({ match }) => {
       ) : (
         <>
           <Row>
-            {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                <Product product={product} />
-              </Col>
-            ))}
+            <Col sm={12} md={8}>
+              <Row>
+                {products.map((product) => (
+                  <Col key={product._id} sm={12} md={6} lg={4}>
+                    <Product product={product} />
+                  </Col>
+                ))}
+              </Row>
+            </Col>
+            <Col sm={12} md={4}>
+              <div>
+                <h2>Filter By</h2>
+                <p>Type</p>
+                <select className="custom-select">
+                  <option selected>Select</option>
+                  <option value="1">Vente</option>
+                  <option value="2">Echange</option>
+                  <option value="3">Location</option>
+                  <option value="4">Location pour vacances</option>
+                </select>
+                <p>Wilaya</p>
+                <select className="custom-select">
+                  <option selected>Select</option>
+                  <option value="1">Medea</option>
+                  <option value="2">Alger</option>
+                  <option value="3">Blida</option>
+                  <option value="4">Bouira</option>
+                </select>
+                <p>Commune</p>
+                <select className="custom-select">
+                  <option selected>Select</option>
+                  <option value="1">Medea</option>
+                  <option value="2">Berouaghia</option>
+                  <option value="3">Tizi El Mahdi</option>
+                  <option value="4">Location pour vacances</option>
+                </select>
+              </div>
+            </Col>
           </Row>
           {/* <Paginate pages={pages} page={page} keyword={''} /> */}
         </>

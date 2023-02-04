@@ -6,6 +6,7 @@ import RegisterPage from './pages/RegisterPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import EstatePage from './pages/EstatePage';
+import AddProductPage from './pages/AddProductPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/product/:id" element={<EstatePage />} />
+            <Route path="/create" element={<AddProductPage />} />
           </Routes>
         </Container>
       </main>
