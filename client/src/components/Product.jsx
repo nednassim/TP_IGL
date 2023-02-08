@@ -20,7 +20,7 @@ const Product = ({ product }) => {
         <Card.Text as="div">
           <span className="badge badge-info">{product.category}</span>
           <br />
-          <span>3 messages</span>
+          <span>{product.wilaya}</span>
         </Card.Text>
 
         <Card.Text as="h3">{product.price} DA</Card.Text>

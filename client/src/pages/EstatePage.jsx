@@ -11,7 +11,6 @@ import {
   Carousel,
 } from 'react-bootstrap';
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
-import Rating from '../components/Rating';
 import Loader from '../components/Loader';
 import axios from 'axios';
 import products from '../products';
