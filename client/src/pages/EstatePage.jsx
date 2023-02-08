@@ -115,20 +115,24 @@ const EstatePage = () => {
                     <Message variant="danger">{errorProductReview}</Message>
                   )} */}
 
-                  <Form onSubmit={(e) => submitHandler(e)}>
-                    <Form.Group controlId="comment">
-                      <Form.Label>Comment</Form.Label>
-                      <Form.Control
-                        as="textarea"
-                        row="3"
-                        value={comment}
-                        onChange={(e) => setComment(e.target.value)}
-                      ></Form.Control>
-                    </Form.Group>
-                    <Button type="submit" variant="primary">
-                      Submit
-                    </Button>
-                  </Form>
+                  {localStorage.getItem('userInfo') ? (
+                    <Form onSubmit={(e) => submitHandler(e)}>
+                      <Form.Group controlId="comment">
+                        <Form.Label>Comment</Form.Label>
+                        <Form.Control
+                          as="textarea"
+                          row="3"
+                          value={comment}
+                          onChange={(e) => setComment(e.target.value)}
+                        ></Form.Control>
+                      </Form.Group>
+                      <Button type="submit" variant="primary">
+                        Submit
+                      </Button>
+                    </Form>
+                  ) : (
+                    <Message>You need to login to be able to comment</Message>
+                  )}
 
                   {/* <Message>
                       Please <Link to="/login">sign in</Link> to write a review{" "}
