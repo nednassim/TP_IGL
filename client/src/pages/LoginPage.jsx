@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
@@ -8,11 +8,7 @@ import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 
 const LoginPage = () => {
-  //   useEffect(() => {
-  //     if (userInfo) {
-  //       history.push(redirect);
-  //     }
-  //   }, [history, userInfo, redirect]);
+  const navigate = useNavigate();
 
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => {
@@ -36,7 +32,9 @@ const LoginPage = () => {
                 const result = res.data.filter((user) => user.email === email);
                 console.log(result);
                 if (result.length > 0) {
+                  localStorage.setItem('userInfo', JSON.stringify(result[0]));
                   console.log('User Logged In Successfully');
+                  navigate('/');
                 } else {
                   console.log('You need to log in');
                 }

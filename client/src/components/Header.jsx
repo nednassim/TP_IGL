@@ -2,14 +2,18 @@ import React, { useState } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Navbar, Nav, Container, NavDropdown, Image } from 'react-bootstrap';
 import SearchBox from './SearchBox';
-import { useLocation } from 'react-router-dom';
+import { redirect, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Header = () => {
-  const location = useLocation();
-  const [userInfo, setUserInfo] = useState(false);
+  const [userInfo, setUserInfo] = useState({});
 
+  useEffect(() => {
+    setUserInfo(localStorage.getItem('userInfo'));
+  }, []);
   const logoutHandler = () => {
-    console.log('logout');
+    localStorage.removeItem('userInfo');
+    setUserInfo({});
   };
 
   return (
@@ -22,16 +26,13 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <LinkContainer to="/cart">
+              <LinkContainer to="/create">
                 <Nav.Link>
-                  <i className="fas fa-home"></i> Offers
+                  <i className="fas fa-home"></i> Create
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (
                 <NavDropdown title="Sohaib" id="username">
-                  <LinkContainer to="/profile">
-                    <NavDropdown.Item>Profile</NavDropdown.Item>
-                  </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout
                   </NavDropdown.Item>
