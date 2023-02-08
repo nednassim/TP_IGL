@@ -10,12 +10,14 @@ import {
   Form,
   Carousel,
 } from 'react-bootstrap';
+import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
 import Rating from '../components/Rating';
 import Loader from '../components/Loader';
 import Meta from '../components/Meta';
 import products from '../products';
 
 const EstatePage = () => {
+  const position = [51.505, -0.09];
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -23,7 +25,17 @@ const EstatePage = () => {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
 
-  const submitHandler = () => {
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const target = product;
+    target.comments.push({
+      _id: 18,
+      owner: 'Bouzidi Nibras',
+      createdAt: '13/02/2023',
+      comment: comment,
+    });
+    setProduct(target);
+    setComment('');
     console.log('Comment Submitted');
   };
 
@@ -59,28 +71,35 @@ const EstatePage = () => {
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <h3>{product.name}</h3>
+                  <span className="badge badge-info">{product.category}</span>
+                  <p>{product.wilaya}</p>
                 </ListGroup.Item>
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                <ListGroup.Item>
+                  <p>Surface: {product.surface} m²</p>
+                </ListGroup.Item>
+                <ListGroup.Item>Price: {product.price} DA</ListGroup.Item>
                 <ListGroup.Item>
                   Description: {product.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
           </Row>
-          <Row className="justify-content-center">
-            <Col md={6}>
-              <h2 className="text-center">Messages</h2>
-              {product.reviews.length === 0 && <Message>No Reviews</Message>}
+          <Row style={{ marginTop: 40 }}>
+            <Col md={8}>
+              <h2 style={{ marginLeft: 16 }}>Messages</h2>
+              {product.comments.length === 0 && <Message>No Comments</Message>}
               <ListGroup variant="flush">
-                {product.reviews.map((review) => (
-                  <ListGroup.Item key={review._id}>
-                    <strong>{review.name}</strong>
-                    <p>{review.createdAt}</p>
-                    <p>{review.comment}</p>
+                {product.comments.map((comment) => (
+                  <ListGroup.Item key={comment._id}>
+                    <strong className="font-weight-bold">
+                      {comment.owner}
+                    </strong>
+                    <p className="font-weight-bold">{comment.createdAt}</p>
+                    <p>{comment.comment}</p>
                   </ListGroup.Item>
                 ))}
                 <ListGroup.Item>
-                  <h2 className="text-center">Send a Message</h2>
+                  <h2 style={{ marginTop: 40 }}>Leave a Comment</h2>
                   {/* {successProductReview && (
                     <Message variant="success">
                       Review submitted successfully
@@ -91,7 +110,7 @@ const EstatePage = () => {
                     <Message variant="danger">{errorProductReview}</Message>
                   )} */}
 
-                  <Form onSubmit={submitHandler}>
+                  <Form onSubmit={(e) => submitHandler(e)}>
                     <Form.Group controlId="comment">
                       <Form.Label>Comment</Form.Label>
                       <Form.Control
@@ -109,6 +128,21 @@ const EstatePage = () => {
                   {/* <Message>
                       Please <Link to="/login">sign in</Link> to write a review{' '}
                     </Message> */}
+                </ListGroup.Item>
+              </ListGroup>
+            </Col>
+            <Col md={3}>
+              <ListGroup variant="flush">
+                <ListGroup.Item>
+                  <h3>Contact Info</h3>
+                  <p>Zouambia Sohaib</p>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <p>js_zouambia@esi.dz</p>
+                </ListGroup.Item>
+                <ListGroup.Item>0777087766</ListGroup.Item>
+                <ListGroup.Item>
+                  Rue Ain El Kebir Porte N°15 Médéa
                 </ListGroup.Item>
               </ListGroup>
             </Col>

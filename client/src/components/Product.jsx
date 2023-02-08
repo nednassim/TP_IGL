@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card } from 'react-bootstrap';
+import { Card, Badge } from 'react-bootstrap';
 import Rating from './Rating';
 
 const Product = ({ product }) => {
@@ -18,6 +18,8 @@ const Product = ({ product }) => {
         </Link>
 
         <Card.Text as="div">
+          <span className="badge badge-info">{product.category}</span>
+          <br />
           <span>3 messages</span>
         </Card.Text>
 
