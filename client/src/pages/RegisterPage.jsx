@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
@@ -8,10 +8,9 @@ import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
   const [telephone, setTelephone] = useState('');
   const [addresse, setAddresse] = useState('');
-
-  const [user, setUser] = useState([]);
 
   //   useEffect(() => {
   //     if (userInfo) {
@@ -52,7 +51,9 @@ const RegisterPage = () => {
                 },
               )
               .then((res) => {
-                console.log('User Created Successfully');
+                localStorage.setItem('userInfo', JSON.stringify(res.data));
+                console.log('User Signed Up Successfully');
+                navigate('/');
               })
               .catch((err) => console.log(err));
           })

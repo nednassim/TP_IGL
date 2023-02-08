@@ -4,8 +4,8 @@
       "name": "sohaib zouambia",
       "short_name": "sohaib",
       "email": "js_zouambia@esi.dz",
-      "telephone": "0777087766",
-      "addresse": "Rue Ain El Kebir",
+      "telephone": "0555119030",
+      "addresse": "Bouraoui Amar",
       "id": 1
     }
   ],
@@ -44,7 +44,13 @@
           "createdAt": "13/11/2022",
           "comment": "I liked the space"
         }
-      ]
+      ],
+      "contactInfo": {
+        "name": "Nibras Bouzidi",
+        "email": "kn_bouzidi@esi.dz",
+        "telephone": "0555119030",
+        "addresse": "Bouraoui Amar"
+      }
     },
     {
       "id": "2",
@@ -80,7 +86,13 @@
           "createdAt": "13/11/2022",
           "comment": "I liked the space"
         }
-      ]
+      ],
+      "contactInfo": {
+        "name": "Nibras Bouzidi",
+        "email": "kn_bouzidi@esi.dz",
+        "telephone": "0555119030",
+        "addresse": "Bouraoui Amar"
+      }
     },
     {
       "id": "3",
@@ -122,7 +134,13 @@
           "createdAt": "08/02/2023",
           "comment": "Hello"
         }
-      ]
+      ],
+      "contactInfo": {
+        "name": "Nibras Bouzidi",
+        "email": "kn_bouzidi@esi.dz",
+        "telephone": "0555119030",
+        "addresse": "Bouraoui Amar"
+      }
     },
     {
       "id": "4",
@@ -158,7 +176,13 @@
           "createdAt": "13/11/2022",
           "comment": "I liked the space"
         }
-      ]
+      ],
+      "contactInfo": {
+        "name": "Nibras Bouzidi",
+        "email": "kn_bouzidi@esi.dz",
+        "telephone": "0555119030",
+        "addresse": "Bouraoui Amar"
+      }
     },
     {
       "id": "5",
@@ -194,7 +218,13 @@
           "createdAt": "13/11/2022",
           "comment": "I liked the space"
         }
-      ]
+      ],
+      "contactInfo": {
+        "name": "Almamma Amir",
+        "email": "ja_amir@esi.dz",
+        "telephone": "0555119030",
+        "addresse": "Bouraoui Amar"
+      }
     },
     {
       "id": "6",
@@ -230,7 +260,30 @@
           "createdAt": "13/11/2022",
           "comment": "I liked the space"
         }
-      ]
+      ],
+      "contactInfo": {
+        "name": "Tiouti Mohamed",
+        "email": "jm_tiouti@esi.dz",
+        "telephone": "0555119030",
+        "addresse": "Bouraoui Amar"
+      }
+    },
+    {
+      "name": "Hotel 8",
+      "price": "60",
+      "wilaya": "Tamanrasset",
+      "category": "Location pour vacances",
+      "surface": "200",
+      "description": "A great hotel for holidays and all",
+      "image": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "comments": [],
+      "contactInfo": {
+        "name": "sohaib zouambia",
+        "email": "js_zouambia@esi.dz",
+        "telephone": "0555119030",
+        "addresse": "Bouraoui Amar"
+      },
+      "id": "XbX1tKG"
     }
   ]
 }

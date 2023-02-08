@@ -15,31 +15,9 @@ const AddProductPage = () => {
   const [surface, setSurface] = useState(0);
   const [description, setDescription] = useState('');
   const [uploading, setUploading] = useState(false);
+  const [userInfo, setUserInfo] = useState({});
 
   const navigate = useNavigate();
-
-  // const uploadFileHandler = async (e) => {
-  //   const file = e.target.files[0];
-  //   const formData = new FormData();
-  //   formData.append('image', file);
-  //   setUploading(true);
-
-  //   try {
-  //     const config = {
-  //       headers: {
-  //         'Content-Type': 'multipart/form-data',
-  //       },
-  //     };
-
-  //     const { data } = await axios.post('/api/upload', formData, config);
-
-  //     setImage(data);
-  //     setUploading(false);
-  //   } catch (error) {
-  //     console.error(error);
-  //     setUploading(false);
-  //   }
-  // };
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -55,6 +33,12 @@ const AddProductPage = () => {
         image:
           'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
         comments: [],
+        contactInfo: {
+          name: userInfo.name,
+          email: userInfo.email,
+          telephone: userInfo.telephone,
+          addresse: userInfo.addresse,
+        },
       },
       {
         headers: {
@@ -65,6 +49,10 @@ const AddProductPage = () => {
     console.log('Submitted');
     navigate('/');
   };
+
+  useEffect(() => {
+    setUserInfo(JSON.parse(localStorage.getItem('userInfo')));
+  }, []);
 
   return (
     <>
@@ -153,9 +141,15 @@ const AddProductPage = () => {
             ></Form.Control>
           </Form.Group>
 
-          <Button type="submit" variant="primary">
-            Create
-          </Button>
+          {userInfo ? (
+            <Button type="submit" variant="primary">
+              Create
+            </Button>
+          ) : (
+            <Button type="submit" variant="primary" disabled>
+              Login to create an announce
+            </Button>
+          )}
         </Form>
       </FormContainer>
     </>

@@ -144,14 +144,22 @@ const EstatePage = () => {
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <h3>Contact Info</h3>
-                  <p>Zouambia Sohaib</p>
+                  <p>
+                    <i className="fas fa-user"></i> {estate.contactInfo.name}
+                  </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <p>js_zouambia@esi.dz</p>
+                  <p>
+                    <i className="fas fa-envelope"></i>{' '}
+                    {estate.contactInfo.email}
+                  </p>
                 </ListGroup.Item>
-                <ListGroup.Item>0777087766</ListGroup.Item>
                 <ListGroup.Item>
-                  Rue Ain El Kebir Porte N°15 Médéa
+                  <i className="fas fa-phone"></i>{' '}
+                  {estate.contactInfo.telephone}
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <i className="fas fa-home"></i> {estate.contactInfo.addresse}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
