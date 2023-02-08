@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import Loader from '../components/Loader';
 import FormContainer from '../components/FormContainer';
@@ -16,34 +16,54 @@ const AddProductPage = () => {
   const [description, setDescription] = useState('');
   const [uploading, setUploading] = useState(false);
 
-  useEffect(() => {}, []);
+  const navigate = useNavigate();
 
-  const uploadFileHandler = async (e) => {
-    const file = e.target.files[0];
-    const formData = new FormData();
-    formData.append('image', file);
-    setUploading(true);
+  // const uploadFileHandler = async (e) => {
+  //   const file = e.target.files[0];
+  //   const formData = new FormData();
+  //   formData.append('image', file);
+  //   setUploading(true);
 
-    try {
-      const config = {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      };
+  //   try {
+  //     const config = {
+  //       headers: {
+  //         'Content-Type': 'multipart/form-data',
+  //       },
+  //     };
 
-      const { data } = await axios.post('/api/upload', formData, config);
+  //     const { data } = await axios.post('/api/upload', formData, config);
 
-      setImage(data);
-      setUploading(false);
-    } catch (error) {
-      console.error(error);
-      setUploading(false);
-    }
-  };
+  //     setImage(data);
+  //     setUploading(false);
+  //   } catch (error) {
+  //     console.error(error);
+  //     setUploading(false);
+  //   }
+  // };
 
-  const submitHandler = (e) => {
+  const submitHandler = async (e) => {
     e.preventDefault();
+    await axios.post(
+      'http://localhost:8080/estates',
+      {
+        name,
+        price,
+        wilaya,
+        category,
+        surface,
+        description,
+        image:
+          'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+        comments: [],
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    );
     console.log('Submitted');
+    navigate('/');
   };
 
   return (
@@ -80,12 +100,7 @@ const AddProductPage = () => {
               value={image}
               onChange={(e) => setImage(e.target.value)}
             ></Form.Control>
-            <Form.File
-              id="image-file"
-              label="Choose File"
-              custom
-              onChange={uploadFileHandler}
-            ></Form.File>
+            <Form.File id="image-file" label="Choose File" custom></Form.File>
             {uploading && <Loader />}
           </Form.Group>
 

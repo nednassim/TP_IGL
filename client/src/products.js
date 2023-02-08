@@ -1,6 +1,6 @@
 const products = [
   {
-    _id: '1',
+    id: '1',
     name: 'Bien Immobilier 1',
     image:
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80',
@@ -14,25 +14,25 @@ const products = [
     numReviews: 4,
     comments: [
       {
-        _id: 11,
+        id: 11,
         owner: 'Zouambia Sohaib',
         createdAt: '13/11/2022',
         comment: 'An Amazing estate',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Zouambia Oussama',
         createdAt: '13/11/2022',
         comment: 'Can you make the price lower please ?',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Adjou Amine',
         createdAt: '13/11/2022',
         comment: 'Looks really good',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Bencheikh Wadjih',
         createdAt: '13/11/2022',
         comment: 'I liked the space',
@@ -40,7 +40,7 @@ const products = [
     ],
   },
   {
-    _id: '2',
+    id: '2',
     name: 'Bien Immobilier 2',
     image:
       'https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1467&q=80',
@@ -54,25 +54,25 @@ const products = [
     numReviews: 4,
     comments: [
       {
-        _id: 11,
+        id: 11,
         owner: 'Zouambia Sohaib',
         createdAt: '13/11/2022',
         comment: 'An Amazing estate',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Zouambia Oussama',
         createdAt: '13/11/2022',
         comment: 'Can you make the price lower please ?',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Adjou Amine',
         createdAt: '13/11/2022',
         comment: 'Looks really good',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Bencheikh Wadjih',
         createdAt: '13/11/2022',
         comment: 'I liked the space',
@@ -80,7 +80,7 @@ const products = [
     ],
   },
   {
-    _id: '3',
+    id: '3',
     name: 'Bien Immobilier 3',
     image:
       'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
@@ -94,25 +94,25 @@ const products = [
     numReviews: 3,
     comments: [
       {
-        _id: 11,
+        id: 11,
         owner: 'Zouambia Sohaib',
         createdAt: '13/11/2022',
         comment: 'An Amazing estate',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Zouambia Oussama',
         createdAt: '13/11/2022',
         comment: 'Can you make the price lower please ?',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Adjou Amine',
         createdAt: '13/11/2022',
         comment: 'Looks really good',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Bencheikh Wadjih',
         createdAt: '13/11/2022',
         comment: 'I liked the space',
@@ -120,7 +120,7 @@ const products = [
     ],
   },
   {
-    _id: '4',
+    id: '4',
     name: 'Bien Immobilier 4',
     image:
       'https://images.unsplash.com/photo-1464146072230-91cabc968266?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
@@ -134,25 +134,25 @@ const products = [
     numReviews: 3,
     comments: [
       {
-        _id: 11,
+        id: 11,
         owner: 'Zouambia Sohaib',
         createdAt: '13/11/2022',
         comment: 'An Amazing estate',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Zouambia Oussama',
         createdAt: '13/11/2022',
         comment: 'Can you make the price lower please ?',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Adjou Amine',
         createdAt: '13/11/2022',
         comment: 'Looks really good',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Bencheikh Wadjih',
         createdAt: '13/11/2022',
         comment: 'I liked the space',
@@ -160,7 +160,7 @@ const products = [
     ],
   },
   {
-    _id: '5',
+    id: '5',
     name: 'Bien Immobilier 5',
     image:
       'https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1596&q=80',
@@ -174,25 +174,25 @@ const products = [
     numReviews: 2,
     comments: [
       {
-        _id: 11,
+        id: 11,
         owner: 'Zouambia Sohaib',
         createdAt: '13/11/2022',
         comment: 'An Amazing estate',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Zouambia Oussama',
         createdAt: '13/11/2022',
         comment: 'Can you make the price lower please ?',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Adjou Amine',
         createdAt: '13/11/2022',
         comment: 'Looks really good',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Bencheikh Wadjih',
         createdAt: '13/11/2022',
         comment: 'I liked the space',
@@ -200,7 +200,7 @@ const products = [
     ],
   },
   {
-    _id: '6',
+    id: '6',
     name: 'Bien Immobilier 6',
     image:
       'https://images.unsplash.com/photo-1558036117-15d82a90b9b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
@@ -214,25 +214,25 @@ const products = [
     numReviews: 4,
     comments: [
       {
-        _id: 11,
+        id: 11,
         owner: 'Zouambia Sohaib',
         createdAt: '13/11/2022',
         comment: 'An Amazing estate',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Zouambia Oussama',
         createdAt: '13/11/2022',
         comment: 'Can you make the price lower please ?',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Adjou Amine',
         createdAt: '13/11/2022',
         comment: 'Looks really good',
       },
       {
-        _id: 11,
+        id: 11,
         owner: 'Bencheikh Wadjih',
         createdAt: '13/11/2022',
         comment: 'I liked the space',

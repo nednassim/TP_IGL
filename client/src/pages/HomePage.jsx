@@ -44,7 +44,7 @@ const HomePage = ({ match }) => {
             <Col sm={12} md={8}>
               <Row>
                 {estates.map((product) => (
-                  <Col key={product._id} sm={12} md={6} lg={4}>
+                  <Col key={product.id} sm={12} md={6} lg={4}>
                     <Product product={product} />
                   </Col>
                 ))}

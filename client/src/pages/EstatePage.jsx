@@ -13,39 +13,46 @@ import {
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
 import Rating from '../components/Rating';
 import Loader from '../components/Loader';
-import Meta from '../components/Meta';
+import axios from 'axios';
 import products from '../products';
+import Message from '../components/Message';
 
 const EstatePage = () => {
-  const position = [51.505, -0.09];
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
+  const [estate, setEstate] = useState({});
   const [loading, setLoading] = useState(true);
-  const [qty, setQty] = useState(1);
-  const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const target = product;
+    const target = estate;
     target.comments.push({
-      _id: 18,
-      owner: 'Bouzidi Nibras',
-      createdAt: '13/02/2023',
+      id: Math.floor(Math.random() * 100) + 1,
+      owner: 'sohaib zouambia',
+      createdAt: '08/02/2023',
       comment: comment,
     });
-    setProduct(target);
+    axios.put(`http://localhost:8080/estates/${id}`, target, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    setEstate(target);
     setComment('');
     console.log('Comment Submitted');
   };
 
   useEffect(() => {
-    const target = products.filter((product) => product._id === id)[0];
-    setProduct(target);
-    setRating(0);
-    setComment('');
-    setLoading(false);
-  }, [loading]);
+    const data = axios
+      .get(`http://localhost:8080/estates/${id}`)
+      .then((res) => {
+        if (res) {
+          setEstate(res.data);
+          setLoading(false);
+        }
+      })
+      .catch((err) => console.log(err.message));
+  }, []);
 
   return (
     <>
@@ -56,12 +63,11 @@ const EstatePage = () => {
         <Loader />
       ) : (
         <>
-          <Meta title={product.name} />
           <Row className="justify-content-center">
             <Col md={6}>
               <Carousel pause="hover" className="bg-dark">
                 {products.map((product) => (
-                  <Carousel.Item key={product._id}>
+                  <Carousel.Item key={product.id}>
                     <img src={product.image} alt={product.name} />
                   </Carousel.Item>
                 ))}
@@ -70,16 +76,16 @@ const EstatePage = () => {
             <Col md={3}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <h3>{product.name}</h3>
-                  <span className="badge badge-info">{product.category}</span>
-                  <p>{product.wilaya}</p>
+                  <h3>{estate.name}</h3>
+                  <span className="badge badge-info">{estate.category}</span>
+                  <p>{estate.wilaya}</p>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <p>Surface: {product.surface} m²</p>
+                  <p>Surface: {estate.surface} m²</p>
                 </ListGroup.Item>
-                <ListGroup.Item>Price: {product.price} DA</ListGroup.Item>
+                <ListGroup.Item>Price: {estate.price} DA</ListGroup.Item>
                 <ListGroup.Item>
-                  Description: {product.description}
+                  Description: {estate.description}
                 </ListGroup.Item>
               </ListGroup>
             </Col>
@@ -87,10 +93,10 @@ const EstatePage = () => {
           <Row style={{ marginTop: 40 }}>
             <Col md={8}>
               <h2 style={{ marginLeft: 16 }}>Messages</h2>
-              {product.comments.length === 0 && <Message>No Comments</Message>}
+              {estate.comments.length === 0 && <Message>No Comments</Message>}
               <ListGroup variant="flush">
-                {product.comments.map((comment) => (
-                  <ListGroup.Item key={comment._id}>
+                {estate.comments.map((comment) => (
+                  <ListGroup.Item key={comment.id}>
                     <strong className="font-weight-bold">
                       {comment.owner}
                     </strong>
