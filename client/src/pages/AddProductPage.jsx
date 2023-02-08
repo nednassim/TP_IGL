@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import Loader from '../components/Loader';
 import FormContainer from '../components/FormContainer';
+import { wilayas } from '../constants/wilayas';
 
 const AddProductPage = () => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState('');
-  const [brand, setBrand] = useState('');
+  const [wilaya, setWilaya] = useState('');
   const [category, setCategory] = useState('');
-  const [countInStock, setCountInStock] = useState(0);
+  const [surface, setSurface] = useState(0);
   const [description, setDescription] = useState('');
   const [uploading, setUploading] = useState(false);
 
@@ -71,7 +72,6 @@ const AddProductPage = () => {
               onChange={(e) => setPrice(e.target.value)}
             ></Form.Control>
           </Form.Group>
-
           <Form.Group controlId="image">
             <Form.Label>Image</Form.Label>
             <Form.Control
@@ -89,34 +89,43 @@ const AddProductPage = () => {
             {uploading && <Loader />}
           </Form.Group>
 
-          <Form.Group controlId="brand">
-            <Form.Label>Brand</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter brand"
-              value={brand}
-              onChange={(e) => setBrand(e.target.value)}
-            ></Form.Control>
-          </Form.Group>
-
-          <Form.Group controlId="countInStock">
-            <Form.Label>Count In Stock</Form.Label>
+          <Form.Group controlId="surface">
+            <Form.Label>Surface</Form.Label>
             <Form.Control
               type="number"
-              placeholder="Enter countInStock"
-              value={countInStock}
-              onChange={(e) => setCountInStock(e.target.value)}
+              placeholder="Enter surface"
+              value={surface}
+              onChange={(e) => setSurface(e.target.value)}
             ></Form.Control>
           </Form.Group>
-
+          <Form.Group controlId="wilaya">
+            <Form.Label>Wilaya</Form.Label>
+            <select
+              className="custom-select"
+              value={wilaya}
+              onChange={(e) => setWilaya(e.target.value)}
+            >
+              <option value="">Choose a Wilaya</option>
+              {wilayas.map((wilaya, index) => (
+                <option value={wilaya.value}>{wilaya.name}</option>
+              ))}
+            </select>
+          </Form.Group>
           <Form.Group controlId="category">
             <Form.Label>Category</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter category"
+            <select
+              className="custom-select"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-            ></Form.Control>
+            >
+              <option value="">Choose a Category</option>
+              <option value="Vente">Vente</option>
+              <option value="Echange">Echange</option>
+              <option value="Location">Location</option>
+              <option value="Location pour vacances">
+                Location pour vacances
+              </option>
+            </select>
           </Form.Group>
 
           <Form.Group controlId="description">

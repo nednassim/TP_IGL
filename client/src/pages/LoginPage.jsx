@@ -57,7 +57,7 @@ const LoginPage = () => {
   //         {
   //           headers: {
   //             Authorization: `Bearer ${user.access_token}`,
-  //             Accept: 'application/json',
+  //             Accept: "application/json",
   //           },
   //         },
   //       )

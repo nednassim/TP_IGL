@@ -6,6 +6,7 @@ import Paginate from '../components/Paginate';
 import ProductCarousel from '../components/ProductCarousel';
 import Meta from '../components/Meta';
 import products from '../products';
+import axios from 'axios';
 
 const HomePage = ({ match }) => {
   // const keyword = match.params.keyword;
@@ -16,9 +17,19 @@ const HomePage = ({ match }) => {
   //   dispatch(listProducts(keyword, pageNumber));
   // }, [dispatch, keyword, pageNumber]);
   const [loading, setLoading] = useState(true);
+  const [estates, setEstates] = useState([]);
   useEffect(() => {
-    setTimeout(() => setLoading(false), 3000);
-  }, [loading]);
+    const data = axios
+      .get('http://localhost:8080/estates')
+      .then((res) => {
+        console.log(res);
+        if (res) {
+          setEstates(res.data);
+          setLoading(false);
+        }
+      })
+      .catch((err) => console.log(err.message));
+  }, []);
 
   return (
     <>
@@ -32,7 +43,7 @@ const HomePage = ({ match }) => {
           <Row>
             <Col sm={12} md={8}>
               <Row>
-                {products.map((product) => (
+                {estates.map((product) => (
                   <Col key={product._id} sm={12} md={6} lg={4}>
                     <Product product={product} />
                   </Col>
@@ -69,7 +80,7 @@ const HomePage = ({ match }) => {
               </div>
             </Col>
           </Row>
-          {/* <Paginate pages={pages} page={page} keyword={''} /> */}
+          {/* <Paginate pages={pages} page={page} keyword={""} /> */}
         </>
       )}
     </>
